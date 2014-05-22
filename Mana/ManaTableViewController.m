@@ -7,8 +7,11 @@
 //
 
 #import "ManaTableViewController.h"
+#import "UITableViewController+NextButtonSegue.h"
 
 @interface ManaTableViewController ()
+@property(nonatomic) IBOutlet UISlider * slider;
+@property(nonatomic) IBOutlet UILabel  * manaCostLabel;
 
 @end
 
@@ -34,6 +37,29 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
     self.tableView.tableHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, self.tableView.bounds.size.width, 0.01f)];
+}
+- (void) viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [self addNextButton];
+}
+- (void) viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    [self removeNextButton];
+}
+- (BOOL) tableView:(UITableView *)tableView shouldHighlightRowAtIndexPath:(NSIndexPath *)indexPath{
+    return NO;
+}
+
+- (IBAction)sliderChanged:(id)sender{
+    int value = [[NSNumber numberWithFloat:self.slider.value] intValue];
+    
+    self.manaCostLabel.text = [NSString stringWithFormat:@"%d", value];
+}
+
+- (IBAction)resetToSuggestedButton:(id)sender{
+    self.slider.value = 115;
+    int value = [[NSNumber numberWithFloat:self.slider.value] intValue];
+    self.manaCostLabel.text = [NSString stringWithFormat:@"%d", value];
 }
 
 - (void)didReceiveMemoryWarning

@@ -29,16 +29,14 @@
     [super viewDidLoad];
     
     self.categories = @[
-                        @"Picnic",
-                        @"Theater",
-                        @"Home Cooked Meal",
-                        @"Sightseeing",
-                        @"Dancing",
-                        @"Concert",
-                        @"Craft Festival",
-                        @"Shopping",
-                        @"Beach",
-                        @"Hiking"
+                        @"Outdoors",
+                        @"Music",
+                        @"Home",
+                        @"Food",
+                        @"Service",
+                        @"Spirituality",
+                        @"Entertainment",
+                        @"Sight Seeing"
                         ];
     
     self.tableView.tableHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, self.tableView.bounds.size.width, 0.01f)];

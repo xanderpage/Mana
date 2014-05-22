@@ -33,6 +33,7 @@
 		D299B221192BCD3100A47540 /* ExperienceCategoryTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D299B220192BCD3100A47540 /* ExperienceCategoryTableViewController.m */; };
 		D2BD732A192E8121007B73C5 /* ManaTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2BD7329192E8121007B73C5 /* ManaTableViewController.m */; };
 		D2BD732E192E88D6007B73C5 /* pretty normal looking girl.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D2BD732D192E88D6007B73C5 /* pretty normal looking girl.jpg */; };
+		D2BD7332192EB921007B73C5 /* photo-background.png in Resources */ = {isa = PBXBuildFile; fileRef = D2BD7331192EB921007B73C5 /* photo-background.png */; };
 		D2E16D87192BC7E4008DD0B0 /* ExperienceTypeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2E16D86192BC7E4008DD0B0 /* ExperienceTypeTableViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -87,6 +88,7 @@
 		D2BD7328192E8121007B73C5 /* ManaTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ManaTableViewController.h; sourceTree = "<group>"; };
 		D2BD7329192E8121007B73C5 /* ManaTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ManaTableViewController.m; sourceTree = "<group>"; };
 		D2BD732D192E88D6007B73C5 /* pretty normal looking girl.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "pretty normal looking girl.jpg"; sourceTree = "<group>"; };
+		D2BD7331192EB921007B73C5 /* photo-background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "photo-background.png"; sourceTree = "<group>"; };
 		D2E16D85192BC7E4008DD0B0 /* ExperienceTypeTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExperienceTypeTableViewController.h; sourceTree = "<group>"; };
 		D2E16D86192BC7E4008DD0B0 /* ExperienceTypeTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExperienceTypeTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -121,6 +123,7 @@
 			children = (
 				D209D2141923DA7200BE5F91 /* Main.storyboard */,
 				D2BD732D192E88D6007B73C5 /* pretty normal looking girl.jpg */,
+				D2BD7331192EB921007B73C5 /* photo-background.png */,
 				D209D21D1923DA7200BE5F91 /* Images.xcassets */,
 				D209D2081923DA7200BE5F91 /* Mana */,
 				D209D22A1923DA7200BE5F91 /* ManaTests */,
@@ -300,6 +303,7 @@
 				D209D20D1923DA7200BE5F91 /* InfoPlist.strings in Resources */,
 				D209D2161923DA7200BE5F91 /* Main.storyboard in Resources */,
 				D2BD732E192E88D6007B73C5 /* pretty normal looking girl.jpg in Resources */,
+				D2BD7332192EB921007B73C5 /* photo-background.png in Resources */,
 				D209D23D1923DAD500BE5F91 /* GoldenGateBridge-001.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
