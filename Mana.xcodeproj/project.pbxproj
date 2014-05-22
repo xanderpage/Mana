@@ -22,6 +22,18 @@
 		D209D2271923DA7200BE5F91 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D209D2061923DA7200BE5F91 /* UIKit.framework */; };
 		D209D22F1923DA7200BE5F91 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D209D22D1923DA7200BE5F91 /* InfoPlist.strings */; };
 		D209D2311923DA7200BE5F91 /* ManaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D209D2301923DA7200BE5F91 /* ManaTests.m */; };
+		D209D23D1923DAD500BE5F91 /* GoldenGateBridge-001.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D209D23C1923DAD500BE5F91 /* GoldenGateBridge-001.jpg */; };
+		D209D2401923DB0300BE5F91 /* MonaFeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D209D23F1923DB0300BE5F91 /* MonaFeedViewController.m */; };
+		D2432C0D192BD11400A87951 /* ExperienceLocationTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2432C0C192BD11400A87951 /* ExperienceLocationTableViewController.m */; };
+		D2432C0F192BD19E00A87951 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2432C0E192BD19E00A87951 /* MapKit.framework */; };
+		D2432C12192C236400A87951 /* UITableViewController+NextButtonSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = D2432C11192C236400A87951 /* UITableViewController+NextButtonSegue.m */; };
+		D2432C15192C24F200A87951 /* HostWhenTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2432C14192C24F200A87951 /* HostWhenTableViewController.m */; };
+		D2432C18192C251C00A87951 /* HostNumbersTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2432C17192C251C00A87951 /* HostNumbersTableViewController.m */; };
+		D2432C1B192C253900A87951 /* HostDetailsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2432C1A192C253900A87951 /* HostDetailsTableViewController.m */; };
+		D299B221192BCD3100A47540 /* ExperienceCategoryTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D299B220192BCD3100A47540 /* ExperienceCategoryTableViewController.m */; };
+		D2BD732A192E8121007B73C5 /* ManaTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2BD7329192E8121007B73C5 /* ManaTableViewController.m */; };
+		D2BD732E192E88D6007B73C5 /* pretty normal looking girl.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D2BD732D192E88D6007B73C5 /* pretty normal looking girl.jpg */; };
+		D2E16D87192BC7E4008DD0B0 /* ExperienceTypeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2E16D86192BC7E4008DD0B0 /* ExperienceTypeTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,12 +62,33 @@
 		D209D2181923DA7200BE5F91 /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
 		D209D21A1923DA7200BE5F91 /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
 		D209D21B1923DA7200BE5F91 /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
-		D209D21D1923DA7200BE5F91 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		D209D21D1923DA7200BE5F91 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = Mana/Images.xcassets; sourceTree = "<group>"; };
 		D209D2231923DA7200BE5F91 /* ManaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ManaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D209D2241923DA7200BE5F91 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		D209D22C1923DA7200BE5F91 /* ManaTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ManaTests-Info.plist"; sourceTree = "<group>"; };
 		D209D22E1923DA7200BE5F91 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		D209D2301923DA7200BE5F91 /* ManaTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ManaTests.m; sourceTree = "<group>"; };
+		D209D23C1923DAD500BE5F91 /* GoldenGateBridge-001.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "GoldenGateBridge-001.jpg"; sourceTree = "<group>"; };
+		D209D23E1923DB0300BE5F91 /* MonaFeedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MonaFeedViewController.h; sourceTree = "<group>"; };
+		D209D23F1923DB0300BE5F91 /* MonaFeedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MonaFeedViewController.m; sourceTree = "<group>"; };
+		D2432C0B192BD11400A87951 /* ExperienceLocationTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExperienceLocationTableViewController.h; sourceTree = "<group>"; };
+		D2432C0C192BD11400A87951 /* ExperienceLocationTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExperienceLocationTableViewController.m; sourceTree = "<group>"; };
+		D2432C0E192BD19E00A87951 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		D2432C10192C236400A87951 /* UITableViewController+NextButtonSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableViewController+NextButtonSegue.h"; sourceTree = "<group>"; };
+		D2432C11192C236400A87951 /* UITableViewController+NextButtonSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableViewController+NextButtonSegue.m"; sourceTree = "<group>"; };
+		D2432C13192C24F200A87951 /* HostWhenTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HostWhenTableViewController.h; sourceTree = "<group>"; };
+		D2432C14192C24F200A87951 /* HostWhenTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HostWhenTableViewController.m; sourceTree = "<group>"; };
+		D2432C16192C251C00A87951 /* HostNumbersTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HostNumbersTableViewController.h; sourceTree = "<group>"; };
+		D2432C17192C251C00A87951 /* HostNumbersTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HostNumbersTableViewController.m; sourceTree = "<group>"; };
+		D2432C19192C253900A87951 /* HostDetailsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HostDetailsTableViewController.h; sourceTree = "<group>"; };
+		D2432C1A192C253900A87951 /* HostDetailsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HostDetailsTableViewController.m; sourceTree = "<group>"; };
+		D299B21F192BCD3100A47540 /* ExperienceCategoryTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExperienceCategoryTableViewController.h; sourceTree = "<group>"; };
+		D299B220192BCD3100A47540 /* ExperienceCategoryTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExperienceCategoryTableViewController.m; sourceTree = "<group>"; };
+		D2BD7328192E8121007B73C5 /* ManaTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ManaTableViewController.h; sourceTree = "<group>"; };
+		D2BD7329192E8121007B73C5 /* ManaTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ManaTableViewController.m; sourceTree = "<group>"; };
+		D2BD732D192E88D6007B73C5 /* pretty normal looking girl.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "pretty normal looking girl.jpg"; sourceTree = "<group>"; };
+		D2E16D85192BC7E4008DD0B0 /* ExperienceTypeTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExperienceTypeTableViewController.h; sourceTree = "<group>"; };
+		D2E16D86192BC7E4008DD0B0 /* ExperienceTypeTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExperienceTypeTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +96,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D2432C0F192BD19E00A87951 /* MapKit.framework in Frameworks */,
 				D209D2051923DA7200BE5F91 /* CoreGraphics.framework in Frameworks */,
 				D209D2071923DA7200BE5F91 /* UIKit.framework in Frameworks */,
 				D209D2031923DA7200BE5F91 /* Foundation.framework in Frameworks */,
@@ -85,6 +119,9 @@
 		D209D1F61923DA7200BE5F91 = {
 			isa = PBXGroup;
 			children = (
+				D209D2141923DA7200BE5F91 /* Main.storyboard */,
+				D2BD732D192E88D6007B73C5 /* pretty normal looking girl.jpg */,
+				D209D21D1923DA7200BE5F91 /* Images.xcassets */,
 				D209D2081923DA7200BE5F91 /* Mana */,
 				D209D22A1923DA7200BE5F91 /* ManaTests */,
 				D209D2011923DA7200BE5F91 /* Frameworks */,
@@ -104,6 +141,7 @@
 		D209D2011923DA7200BE5F91 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D2432C0E192BD19E00A87951 /* MapKit.framework */,
 				D209D2021923DA7200BE5F91 /* Foundation.framework */,
 				D209D2041923DA7200BE5F91 /* CoreGraphics.framework */,
 				D209D2061923DA7200BE5F91 /* UIKit.framework */,
@@ -115,14 +153,16 @@
 		D209D2081923DA7200BE5F91 /* Mana */ = {
 			isa = PBXGroup;
 			children = (
+				D2E16D84192BC7B8008DD0B0 /* Host Creation */,
+				D209D23E1923DB0300BE5F91 /* MonaFeedViewController.h */,
+				D209D23F1923DB0300BE5F91 /* MonaFeedViewController.m */,
+				D209D23C1923DAD500BE5F91 /* GoldenGateBridge-001.jpg */,
 				D209D2111923DA7200BE5F91 /* AppDelegate.h */,
 				D209D2121923DA7200BE5F91 /* AppDelegate.m */,
-				D209D2141923DA7200BE5F91 /* Main.storyboard */,
 				D209D2171923DA7200BE5F91 /* FirstViewController.h */,
 				D209D2181923DA7200BE5F91 /* FirstViewController.m */,
 				D209D21A1923DA7200BE5F91 /* SecondViewController.h */,
 				D209D21B1923DA7200BE5F91 /* SecondViewController.m */,
-				D209D21D1923DA7200BE5F91 /* Images.xcassets */,
 				D209D2091923DA7200BE5F91 /* Supporting Files */,
 			);
 			path = Mana;
@@ -155,6 +195,29 @@
 				D209D22D1923DA7200BE5F91 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D2E16D84192BC7B8008DD0B0 /* Host Creation */ = {
+			isa = PBXGroup;
+			children = (
+				D2E16D85192BC7E4008DD0B0 /* ExperienceTypeTableViewController.h */,
+				D2E16D86192BC7E4008DD0B0 /* ExperienceTypeTableViewController.m */,
+				D299B21F192BCD3100A47540 /* ExperienceCategoryTableViewController.h */,
+				D299B220192BCD3100A47540 /* ExperienceCategoryTableViewController.m */,
+				D2432C0B192BD11400A87951 /* ExperienceLocationTableViewController.h */,
+				D2432C0C192BD11400A87951 /* ExperienceLocationTableViewController.m */,
+				D2432C10192C236400A87951 /* UITableViewController+NextButtonSegue.h */,
+				D2432C11192C236400A87951 /* UITableViewController+NextButtonSegue.m */,
+				D2432C13192C24F200A87951 /* HostWhenTableViewController.h */,
+				D2432C14192C24F200A87951 /* HostWhenTableViewController.m */,
+				D2432C16192C251C00A87951 /* HostNumbersTableViewController.h */,
+				D2432C17192C251C00A87951 /* HostNumbersTableViewController.m */,
+				D2432C19192C253900A87951 /* HostDetailsTableViewController.h */,
+				D2432C1A192C253900A87951 /* HostDetailsTableViewController.m */,
+				D2BD7328192E8121007B73C5 /* ManaTableViewController.h */,
+				D2BD7329192E8121007B73C5 /* ManaTableViewController.m */,
+			);
+			name = "Host Creation";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -236,6 +299,8 @@
 				D209D21E1923DA7200BE5F91 /* Images.xcassets in Resources */,
 				D209D20D1923DA7200BE5F91 /* InfoPlist.strings in Resources */,
 				D209D2161923DA7200BE5F91 /* Main.storyboard in Resources */,
+				D2BD732E192E88D6007B73C5 /* pretty normal looking girl.jpg in Resources */,
+				D209D23D1923DAD500BE5F91 /* GoldenGateBridge-001.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -254,8 +319,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D2432C1B192C253900A87951 /* HostDetailsTableViewController.m in Sources */,
+				D209D2401923DB0300BE5F91 /* MonaFeedViewController.m in Sources */,
+				D2432C18192C251C00A87951 /* HostNumbersTableViewController.m in Sources */,
+				D2E16D87192BC7E4008DD0B0 /* ExperienceTypeTableViewController.m in Sources */,
+				D2432C12192C236400A87951 /* UITableViewController+NextButtonSegue.m in Sources */,
+				D2432C0D192BD11400A87951 /* ExperienceLocationTableViewController.m in Sources */,
+				D299B221192BCD3100A47540 /* ExperienceCategoryTableViewController.m in Sources */,
 				D209D21C1923DA7200BE5F91 /* SecondViewController.m in Sources */,
 				D209D2131923DA7200BE5F91 /* AppDelegate.m in Sources */,
+				D2432C15192C24F200A87951 /* HostWhenTableViewController.m in Sources */,
+				D2BD732A192E8121007B73C5 /* ManaTableViewController.m in Sources */,
 				D209D2191923DA7200BE5F91 /* FirstViewController.m in Sources */,
 				D209D20F1923DA7200BE5F91 /* main.m in Sources */,
 			);
@@ -294,6 +368,7 @@
 				D209D2151923DA7200BE5F91 /* Base */,
 			);
 			name = Main.storyboard;
+			path = Mana;
 			sourceTree = "<group>";
 		};
 		D209D22D1923DA7200BE5F91 /* InfoPlist.strings */ = {
@@ -462,6 +537,7 @@
 				D209D2361923DA7200BE5F91 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D209D2371923DA7200BE5F91 /* Build configuration list for PBXNativeTarget "ManaTests" */ = {
 			isa = XCConfigurationList;
@@ -470,6 +546,7 @@
 				D209D2391923DA7200BE5F91 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
