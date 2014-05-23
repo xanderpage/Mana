@@ -221,7 +221,7 @@
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                             </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="pretty normal looking girl.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="Thj-Z4-YJQ">
-                                <rect key="frame" x="20" y="104" width="148" height="148"/>
+                                <rect key="frame" x="20" y="127" width="148" height="148"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
@@ -233,11 +233,11 @@
             </objects>
             <point key="canvasLocation" x="3" y="1560"/>
         </scene>
-        <!--Navigation Controller - Item-->
+        <!--Navigation Controller - HOST-->
         <scene sceneID="yLY-Ur-2U4">
             <objects>
                 <navigationController definesPresentationContext="YES" id="BPE-40-L8G" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="FM3-Z2-ZT3"/>
+                    <tabBarItem key="tabBarItem" title="HOST" id="FM3-Z2-ZT3"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="qgB-DF-n4o">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -253,7 +253,7 @@
         <scene sceneID="RGJ-vV-FNd">
             <objects>
                 <navigationController title="Mana" definesPresentationContext="YES" id="4dg-0U-Kcp" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="l55-CD-3xt"/>
+                    <tabBarItem key="tabBarItem" title="HOME" id="l55-CD-3xt"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="TRJ-d5-AtL">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -263,7 +263,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hwK-e6-pYi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1041" y="1038"/>
+            <point key="canvasLocation" x="-997" y="1560"/>
         </scene>
         <!--Experience Category Table View Controller - Host Provision-->
         <scene sceneID="no4-wz-qax">
@@ -594,7 +594,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="avy-vx-06d" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="429" y="256"/>
+            <point key="canvasLocation" x="392" y="256"/>
         </scene>
         <!--Host Numbers Table View Controller - Host Provision-->
         <scene sceneID="fZd-7H-9Am">
@@ -1275,7 +1275,7 @@
         <image name="mana-icon" width="120" height="120"/>
         <image name="photo-background.png" width="320" height="240"/>
         <image name="pretty normal looking girl.jpg" width="271" height="271"/>
-        <image name="star" width="120" height="120"/>
+        <image name="star" width="42" height="41"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
