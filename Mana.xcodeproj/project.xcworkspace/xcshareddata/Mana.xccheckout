@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>9F5ADC90-7EDD-43D2-9A63-F1DB933F92E4</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Mana</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>48395ECC-D408-4678-8AFD-42B0F9A24DE4</key>
+		<string>ssh://github.com/shebbys/Mana.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Mana.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>48395ECC-D408-4678-8AFD-42B0F9A24DE4</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>ssh://github.com/shebbys/Mana.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>48395ECC-D408-4678-8AFD-42B0F9A24DE4</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>48395ECC-D408-4678-8AFD-42B0F9A24DE4</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Mana</string>
+		</dict>
+	</array>
+</dict>
+</plist>

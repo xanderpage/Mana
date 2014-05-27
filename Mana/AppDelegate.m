@@ -7,12 +7,25 @@
 //
 
 #import "AppDelegate.h"
+#import "Mixpanel.h"
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
+    // Facebook is configured in the Mana-Info.plist
+    
+    //https://mixpanel.com/help/reference/ios
+    [Mixpanel sharedInstanceWithToken:@"TOKEN"];
+    [[Mixpanel sharedInstance] registerSuperPropertiesOnce:@{@"user":@"guy@mana.com"}];
+    [[Mixpanel sharedInstance] track:@"App Launch" properties:nil];
+    
+    [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"navbar"] forBarPosition:UIBarPositionTop barMetrics:UIBarMetricsDefault];
+    [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+
+    
+    
     return YES;
 }
 							
