@@ -7,14 +7,14 @@
 		<dict>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>fbAPPNUMBER</string>
+				<string>fb1433357256932154</string>
 			</array>
 		</dict>
 	</array>
 	<key>FacebookDisplayName</key>
-	<string>Mana App</string>
+	<string>Mana</string>
 	<key>FacebookAppID</key>
-	<string>com.mana.app</string>
+	<string>1433357256932154</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleDisplayName</key>

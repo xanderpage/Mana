@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="DCh-OZ-g9q">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="kAp-nh-WPD">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
@@ -152,18 +152,18 @@
         <!--Mana Navigation View Controller - Mana-->
         <scene sceneID="RGJ-vV-FNd">
             <objects>
-                <navigationController storyboardIdentifier="navigationcontroller" title="Mana" definesPresentationContext="YES" id="4dg-0U-Kcp" customClass="ManaNavigationViewController" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="RootNavigation" title="Mana" definesPresentationContext="YES" id="4dg-0U-Kcp" customClass="ManaNavigationViewController" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="HOME" id="l55-CD-3xt"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="TRJ-d5-AtL">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="QMD-ak-vxV" kind="relationship" relationship="rootViewController" id="k5K-LA-Zda"/>
+                        <segue destination="QMD-ak-vxV" kind="relationship" relationship="rootViewController" id="cXM-8V-Yzm"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hwK-e6-pYi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1013" y="1038"/>
+            <point key="canvasLocation" x="-1493" y="933"/>
         </scene>
         <!--Feed View Controller-->
         <scene sceneID="hN1-Nc-0Th">
@@ -188,7 +188,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6V6-OX-D27" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-541" y="1038"/>
+            <point key="canvasLocation" x="-33" y="1022"/>
         </scene>
         <!--Experience Category Table View Controller - Host Provision-->
         <scene sceneID="no4-wz-qax">
@@ -1148,7 +1148,7 @@
         <!--Mana Profile View Controller-->
         <scene sceneID="R5a-cn-t1z">
             <objects>
-                <viewController id="QMD-ak-vxV" customClass="ManaProfileViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Profile" id="QMD-ak-vxV" customClass="ManaProfileViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Q3W-ZW-6J6">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1160,8 +1160,8 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="San Francisco, CA" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="nCU-Vj-Lf4">
-                                <rect key="frame" x="89" y="102" width="142" height="22"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="San Francisco, CA" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="nCU-Vj-Lf4">
+                                <rect key="frame" x="15" y="102" width="293" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -1199,31 +1199,28 @@
                                 <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" id="yxj-y5-HYq" customClass="KIImagePager">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="iqS-J5-iFT">
                                 <rect key="frame" x="0.0" y="132" width="320" height="168"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                <connections>
-                                    <outlet property="dataSource" destination="QMD-ak-vxV" id="LPo-gs-f6a"/>
-                                    <outlet property="delegate" destination="QMD-ak-vxV" id="fVq-kf-5Jq"/>
-                                </connections>
-                            </view>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="dBX-uL-Sds"/>
                     <connections>
-                        <outlet property="imagePager" destination="yxj-y5-HYq" id="8bp-TI-2Gh"/>
+                        <outlet property="locationLabel" destination="nCU-Vj-Lf4" id="7ox-pP-9t3"/>
+                        <outlet property="nameLabel" destination="sNe-YF-B6R" id="VJS-01-Ibn"/>
+                        <outlet property="profileImageView" destination="iqS-J5-iFT" id="jKg-pZ-4Am"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rfe-AV-s2o" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-842" y="1756"/>
+            <point key="canvasLocation" x="-1119" y="933"/>
         </scene>
         <!--Content View Controller-->
         <scene sceneID="Px8-m6-Lf8">
             <objects>
-                <viewController id="DCh-OZ-g9q" customClass="ContentViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Content" id="DCh-OZ-g9q" customClass="ContentViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="51f-Pi-iR4">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1232,40 +1229,114 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uzc-M1-P6p" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1540" y="1301"/>
+            <point key="canvasLocation" x="-1880" y="933"/>
         </scene>
-        <!--View Controller-->
+        <!--Mana Login View Controller-->
         <scene sceneID="CSp-zc-FfC">
             <objects>
-                <viewController id="kAp-nh-WPD" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Login" id="kAp-nh-WPD" customClass="ManaLoginViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="TsR-i8-PJ2">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="K8f-ci-IfD">
-                                <rect key="frame" x="20" y="259" width="280" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.062735085169999996" green="0.72253025179999997" blue="0.91018778089999997" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Login With Facebook">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create an account now" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="7nx-vZ-TPT">
                                 <rect key="frame" x="20" y="81" width="280" height="161"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" id="HOX-9q-1Pa" customClass="FBLoginView">
+                                <rect key="frame" x="20" y="225" width="280" height="117"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="8jY-uW-Gcu"/>
+                    <connections>
+                        <outlet property="loginSubview" destination="HOX-9q-1Pa" id="6tf-lF-ScA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6ly-an-CVN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1290" y="2018"/>
+            <point key="canvasLocation" x="-2293" y="933"/>
+        </scene>
+        <!--Mana Menu Table View Controller-->
+        <scene sceneID="5hR-ml-XSM">
+            <objects>
+                <tableViewController storyboardIdentifier="Menu" id="HT4-sw-aE9" customClass="ManaMenuTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="qf7-BY-W5l">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <sections>
+                            <tableViewSection id="HfC-5K-gW5">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="214" id="1Hg-3l-cLO">
+                                        <rect key="frame" x="0.0" y="35" width="320" height="214"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1Hg-3l-cLO" id="3mG-op-Znj">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="213"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Mana-Logo-Vertical" id="eRY-7b-SK4">
+                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="213"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                </imageView>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="SoR-4C-Z5o">
+                                        <rect key="frame" x="0.0" y="249" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="SoR-4C-Z5o" id="EXb-RY-vYT">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="eWs-dc-7L3">
+                                                    <rect key="frame" x="20" y="7" width="280" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" title="My Profile">
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="gotoProfileButtonTapped:" destination="HT4-sw-aE9" eventType="touchUpInside" id="0qu-Di-t3r"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="8ji-Bw-laZ">
+                                        <rect key="frame" x="0.0" y="293" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8ji-Bw-laZ" id="IE3-19-r6q">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" id="yCa-97-1o3" customClass="FBLoginView">
+                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                                </view>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="HT4-sw-aE9" id="TfN-O0-zs8"/>
+                            <outlet property="delegate" destination="HT4-sw-aE9" id="qMT-qP-5v9"/>
+                        </connections>
+                    </tableView>
+                    <connections>
+                        <outlet property="loginView" destination="yCa-97-1o3" id="nAf-Uc-jFM"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HlL-Sl-wpx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2012" y="1656"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="ZqT-Nx-Xww">
@@ -1442,6 +1513,7 @@
     </scenes>
     <resources>
         <image name="GoldenGateBridge-001.jpg" width="320" height="173"/>
+        <image name="Mana-Logo-Vertical" width="1227" height="1436"/>
         <image name="heart" width="512" height="512"/>
         <image name="mana-circle" width="257" height="242"/>
         <image name="photo-background.png" width="320" height="240"/>

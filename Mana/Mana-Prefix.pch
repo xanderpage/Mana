@@ -16,4 +16,11 @@
 
     #import <FacebookSDK/FacebookSDK.h>
     #import "Mixpanel.h"
+    #import <Firebase/Firebase.h>
+
+    #import "SDImageCache.h"
+    #import "SDWebImageManager.h"
+    #import "UIImageView+WebCache.h"
+
+    #import "ManaUserManager.h" // user account singleton
 #endif

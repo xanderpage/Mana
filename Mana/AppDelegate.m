@@ -8,12 +8,15 @@
 
 #import "AppDelegate.h"
 #import "Mixpanel.h"
+#import "ManaLoginViewController.h"
+#import "ContentViewController.h"
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Facebook is configured in the Mana-Info.plist
+    [ManaUserManager sharedInstance];
     
     //https://mixpanel.com/help/reference/ios
     [Mixpanel sharedInstanceWithToken:@"TOKEN"];
@@ -24,11 +27,45 @@
     [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
 
+    // Create a reference to a Firebase location
+    Firebase* f = [[Firebase alloc] initWithUrl:@"https://glowing-fire-7751.firebaseio.com/"];
     
+    // Write data to Firebase
+    [f setValue:@"Do you have data? You'll love Firebase."];
     
+    // Read data and react to changes
+    [f observeEventType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
+        NSLog(@"%@ -> %@", snapshot.name, snapshot.value);
+    }];
+    
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loggedIn:) name:@"LoggedIn" object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loggedOut:) name:@"LoggedOut" object:nil];        
+    });
     return YES;
 }
-							
+
+- (void) loggedIn:(NSNotification*)note{
+    if( [self.window.rootViewController isKindOfClass:[ContentViewController class]] ) return;
+
+    ContentViewController * vc = (ContentViewController*)[[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"Content"];
+    
+
+    [self.window setRootViewController:vc];
+}
+- (void) loggedOut:(NSNotification*)note{
+    if( [self.window.rootViewController isKindOfClass:[ManaLoginViewController class]] ) return;
+
+    UIViewController * vc = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"Login"];
+    [self.window setRootViewController:vc];
+}
+
+- (BOOL) application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation{
+    BOOL wasHandled = [FBAppCall handleOpenURL:url sourceApplication:sourceApplication];
+
+    return wasHandled;
+}
 - (void)applicationWillResignActive:(UIApplication *)application
 {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

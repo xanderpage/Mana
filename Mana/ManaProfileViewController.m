@@ -7,9 +7,12 @@
 //
 
 #import "ManaProfileViewController.h"
+#import "NSDate+ShortCuts.h"
 
 @interface ManaProfileViewController ()
-@property(nonatomic,weak) IBOutlet KIImagePager * imagePager;
+@property(nonatomic,weak) IBOutlet UIImageView * profileImageView;
+@property(nonatomic,weak) IBOutlet UILabel      * nameLabel;
+@property(nonatomic,weak) IBOutlet UILabel      * locationLabel;
 @end
 
 @implementation ManaProfileViewController
@@ -27,6 +30,25 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    [FBRequestConnection startWithGraphPath:@"/me?fields=picture.height(961)"
+                          completionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
+                              if (!error) {
+                                  NSLog(@"user events: %@", result);
+                                  NSDictionary * picture = result[@"picture"];
+                                  NSDictionary * data    = picture[@"data"];
+                                  NSString     * urls    = data[@"url"];
+                                  
+                                  [self.profileImageView setImageWithURL:[NSURL URLWithString:urls]];
+                              } else {
+                                  NSLog([error localizedDescription]);
+                              }
+                          }];
+
+    self.locationLabel.text = [ManaUserManager sharedInstance].facebookUser.location.name;
+
+    NSInteger age = [NSDate ageFromFacebookBirthday:[ManaUserManager sharedInstance].facebookUser.birthday];
+    self.nameLabel.text = [NSString stringWithFormat:@"%@, %d",[ManaUserManager sharedInstance].facebookUser.first_name, age];
 }
 
 - (void)didReceiveMemoryWarning

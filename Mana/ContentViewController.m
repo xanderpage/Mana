@@ -20,6 +20,7 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
+        [self setup];
     }
     return self;
 }
@@ -27,9 +28,12 @@
 {
     [super awakeFromNib];
     
-    self.centerViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"navigationcontroller"];
-    self.leftDrawerViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"LeftMenu"];
-    self.rightDrawerViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"LeftMenu"];
+    [self setup];
+}
+- (void) setup{
+    self.centerViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"RootNavigation"];
+    self.leftDrawerViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"Menu"];
+//    self.rightDrawerViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"LeftMenu"];
 
     [self setShowsShadow:NO];
     [self setRestorationIdentifier:@"MMDrawer"];
@@ -37,9 +41,18 @@
     [self setOpenDrawerGestureModeMask:MMOpenDrawerGestureModeAll];
     [self setCloseDrawerGestureModeMask:MMCloseDrawerGestureModeAll];
     
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(gotoProfile:) name:@"GotoProfile" object:nil];
+}
+- (void) gotoProfile:(NSNotification*)note{
+    UINavigationController * nav = self.centerViewController;
     
+    nav.viewControllers = @[ [self.storyboard instantiateViewControllerWithIdentifier:@"Profile"] ];
+    [self closeDrawerAnimated:YES completion:nil];
 }
 
+- (void) gotoFeed{
+    
+}
 - (void)viewDidLoad
 {
     [super viewDidLoad];

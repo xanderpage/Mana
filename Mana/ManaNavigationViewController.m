@@ -11,7 +11,6 @@
 @implementation ManaNavigationViewController
 - (void) awakeFromNib
 {
-    
 }
 
 @end
