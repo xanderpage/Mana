@@ -7,6 +7,7 @@
 //
 
 #import "FeedViewController.h"
+#import "UIViewController+MMDrawerController.h"
 
 @interface FeedViewController ()
 @property(nonatomic) IBOutlet UIScrollView * scrollView;
@@ -30,14 +31,14 @@
     
     self.tabBarController.tabBar.hidden = YES;
     
-    NSArray *nibContents = [[NSBundle mainBundle] loadNibNamed:@"ExperienceCard" owner:self options:nil];
-    UIView * cardView = [nibContents objectAtIndex:0];
-
-    self.scrollView.contentSize = cardView.frame.size;
-    [self.scrollView addSubview:cardView];
-
+    self.scrollView.contentSize = CGSizeMake(self.view.frame.size.width, 645+1);
+    self.scrollView.contentOffset = CGPointMake(0, 200);
 }
-
+- (IBAction)leftBarButtonItemPressed:(id)sender{
+    [self.mm_drawerController openDrawerSide:MMDrawerSideLeft animated:YES completion:^(BOOL finished) {
+        
+    }];
+}
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];

@@ -38,8 +38,8 @@
     [self setShowsShadow:NO];
     [self setRestorationIdentifier:@"MMDrawer"];
     [self setMaximumRightDrawerWidth:200.0];
-    [self setOpenDrawerGestureModeMask:MMOpenDrawerGestureModeAll];
-    [self setCloseDrawerGestureModeMask:MMCloseDrawerGestureModeAll];
+    [self setOpenDrawerGestureModeMask:MMOpenDrawerGestureModeNone];
+    [self setCloseDrawerGestureModeMask:MMOpenDrawerGestureModeNone];
     [self setStatusBarViewBackgroundColor:[UIColor whiteColor]];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(gotoProfile:) name:@"GotoProfile" object:nil];

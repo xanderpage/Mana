@@ -8,6 +8,7 @@
 
 #import "ExperienceCategoryTableViewController.h"
 #import "UITableViewController+NextButtonSegue.h"
+#import "UIViewController+MMDrawerController.h"
 
 @interface ExperienceCategoryTableViewController ()
 @property(nonatomic) NSArray * categories;
@@ -41,6 +42,11 @@
     
     self.tableView.tableHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, self.tableView.bounds.size.width, 0.01f)];
     
+}
+- (IBAction)leftBarButtonItemPressed:(id)sender{
+    [self.mm_drawerController openDrawerSide:MMDrawerSideLeft animated:YES completion:^(BOOL finished) {
+        
+    }];
 }
 - (void) viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];

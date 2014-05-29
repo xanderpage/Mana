@@ -8,6 +8,8 @@
 
 #import "ManaProfileViewController.h"
 #import "NSDate+ShortCuts.h"
+#import "UIViewController+MMDrawerController.h"
+
 
 @interface ManaProfileViewController ()
 @property(nonatomic,weak) IBOutlet UIImageView * profileImageView;
@@ -50,7 +52,11 @@
     NSInteger age = [NSDate ageFromFacebookBirthday:[ManaUserManager sharedInstance].facebookUser.birthday];
     self.nameLabel.text = [NSString stringWithFormat:@"%@, %d",[ManaUserManager sharedInstance].facebookUser.first_name, age];
 }
-
+- (IBAction)leftBarButtonItemPressed:(id)sender{
+    [self.mm_drawerController openDrawerSide:MMDrawerSideLeft animated:YES completion:^(BOOL finished) {
+        
+    }];
+}
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
