@@ -31,7 +31,7 @@
     
     self.tabBarController.tabBar.hidden = YES;
     
-    self.scrollView.contentSize = CGSizeMake(self.view.frame.size.width, 645+1);
+    self.scrollView.contentSize = CGSizeMake(self.view.frame.size.width, 630);
     self.scrollView.contentOffset = CGPointMake(0, 200);
 }
 - (IBAction)leftBarButtonItemPressed:(id)sender{

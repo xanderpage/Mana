@@ -14,4 +14,5 @@
 
 
 - (void) logout;
+- (NSArray*) facebookReadPermissions;
 @end

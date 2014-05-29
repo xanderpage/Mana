@@ -28,7 +28,7 @@
     // Do any additional setup after loading the view.
     
     [FBLoginView class];
-    self.loginSubview.readPermissions = @[@"public_profile", @"email", @"user_friends", @"user_birthday", @"user_location"];
+    self.loginSubview.readPermissions = [ManaUserManager sharedInstance].facebookReadPermissions;
     self.loginSubview.delegate = [ManaUserManager sharedInstance];
 }
 
