@@ -11,6 +11,15 @@
 @implementation ManaNavigationViewController
 - (void) awakeFromNib
 {
+    [super awakeFromNib];
+    [self setup];
 }
+
+
+
+- (void) setup{
+    self.view.backgroundColor = [UIColor whiteColor];
+}
+
 
 @end

@@ -23,9 +23,9 @@
     [[Mixpanel sharedInstance] registerSuperPropertiesOnce:@{@"user":@"guy@mana.com"}];
     [[Mixpanel sharedInstance] track:@"App Launch" properties:nil];
     
+
+    [[UINavigationBar appearance] setBackgroundColor:[UIColor whiteColor]];
     [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"navbar"] forBarPosition:UIBarPositionTop barMetrics:UIBarMetricsDefault];
-    [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
-    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
 
     // Create a reference to a Firebase location
     Firebase* f = [[Firebase alloc] initWithUrl:@"https://glowing-fire-7751.firebaseio.com/"];
@@ -43,6 +43,8 @@
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loggedIn:) name:@"LoggedIn" object:nil];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loggedOut:) name:@"LoggedOut" object:nil];        
     });
+    
+
     return YES;
 }
 

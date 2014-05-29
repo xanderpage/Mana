@@ -315,13 +315,14 @@
 		D209D2081923DA7200BE5F91 /* Mana */ = {
 			isa = PBXGroup;
 			children = (
+				D209D2111923DA7200BE5F91 /* AppDelegate.h */,
+				D209D2121923DA7200BE5F91 /* AppDelegate.m */,
+				D209D2091923DA7200BE5F91 /* Supporting Files */,
 				D2FC8AEA1935177B009D372C /* NSDate+ShortCuts.h */,
 				D2FC8AEB1935177B009D372C /* NSDate+ShortCuts.m */,
 				D2E16D84192BC7B8008DD0B0 /* Host Creation */,
 				D24E3006193678EC002DA64F /* Feed */,
 				D209D23C1923DAD500BE5F91 /* GoldenGateBridge-001.jpg */,
-				D209D2111923DA7200BE5F91 /* AppDelegate.h */,
-				D209D2121923DA7200BE5F91 /* AppDelegate.m */,
 				D2F8DB6A192FC1B70036E267 /* FeedViewController.h */,
 				D2F8DB6B192FC1B70036E267 /* FeedViewController.m */,
 				D260036D19344D71003239FE /* ManaNavigationViewController.h */,
@@ -336,7 +337,6 @@
 				D2FC8ABC19350653009D372C /* ManaUserManager.m */,
 				D24E300319366969002DA64F /* ManaMenuTableViewController.h */,
 				D24E300419366969002DA64F /* ManaMenuTableViewController.m */,
-				D209D2091923DA7200BE5F91 /* Supporting Files */,
 			);
 			path = Mana;
 			sourceTree = "<group>";

@@ -46,5 +46,6 @@
 }
 - (void) loginView:	(FBLoginView *)loginView handleError:(NSError *)error{
     // error happen
+    NSLog(@"%@", error);
 }
 @end

@@ -44,6 +44,14 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)gotoFeedButtonTapped:(id)sender{
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"GotoFeed" object:nil];
+}
+
+- (IBAction)gotoHostButtonTapped:(id)sender{
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"GotoHost" object:nil];
+}
+
 - (IBAction)gotoProfileButtonTapped:(id)sender{
     [[NSNotificationCenter defaultCenter] postNotificationName:@"GotoProfile" object:nil];
 }
