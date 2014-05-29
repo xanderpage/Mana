@@ -31,6 +31,7 @@
     [self setup];
 }
 - (void) setup{
+    NSLog(@"Setup Content Layout");
     self.centerViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"RootNavigation"];
     self.leftDrawerViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"Menu"];
     self.rightDrawerViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"Menu"];

@@ -15,6 +15,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    [FBLoginView class];
+    
     // Facebook is configured in the Mana-Info.plist
     [ManaUserManager sharedInstance];
     

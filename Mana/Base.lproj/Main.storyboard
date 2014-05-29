@@ -1557,6 +1557,9 @@
                             <outlet property="delegate" destination="HT4-sw-aE9" id="qMT-qP-5v9"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <outlet property="loginView" destination="dWe-YT-Rfs" id="piD-DV-mGG"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HlL-Sl-wpx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -9,7 +9,7 @@
 #import "ManaMenuTableViewController.h"
 
 @interface ManaMenuTableViewController ()
-@property(nonatomic,weak) IBOutlet FBLoginView * loginView;
+@property(nonatomic) IBOutlet FBLoginView * loginView;
 @end
 
 @implementation ManaMenuTableViewController
@@ -33,11 +33,12 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     self.tableView.tableHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, self.tableView.bounds.size.width, 0.01f)];
-
-    self.loginView.delegate = [ManaUserManager sharedInstance];
     
 }
-
+- (void) viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    self.loginView.delegate = [ManaUserManager sharedInstance];
+}
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
