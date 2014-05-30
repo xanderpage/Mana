@@ -7,6 +7,7 @@
 //
 
 #import "ManageExperiencesTableViewController.h"
+#import "UIViewController+MMDrawerController.h"
 
 @interface ManageExperiencesTableViewController ()
 
@@ -39,7 +40,11 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
+- (IBAction)leftBarButtonItemPressed:(id)sender{
+    [self.mm_drawerController openDrawerSide:MMDrawerSideLeft animated:YES completion:^(BOOL finished) {
+        
+    }];
+}
 - (NSInteger) numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
     return 1;
 }

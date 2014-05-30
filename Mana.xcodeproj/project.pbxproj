@@ -33,6 +33,7 @@
 		D24E304C1937B50D002DA64F /* girl-alt2.png in Resources */ = {isa = PBXBuildFile; fileRef = D24E30491937B50D002DA64F /* girl-alt2.png */; };
 		D24E304D1937B50D002DA64F /* girl-alt3.png in Resources */ = {isa = PBXBuildFile; fileRef = D24E304A1937B50D002DA64F /* girl-alt3.png */; };
 		D25C5B781938F787000FD09C /* ManageExperiencesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D25C5B771938F787000FD09C /* ManageExperiencesTableViewController.m */; };
+		D25C5BC519390DEC000FD09C /* ImagePagerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D25C5BC419390DEC000FD09C /* ImagePagerViewController.m */; };
 		D260036F19344D71003239FE /* ManaNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D260036E19344D71003239FE /* ManaNavigationViewController.m */; };
 		D26003721934506A003239FE /* ContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D26003711934506A003239FE /* ContentViewController.m */; };
 		D26003E319345E5A003239FE /* MMDrawerBarButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = D26003DB19345E5A003239FE /* MMDrawerBarButtonItem.m */; };
@@ -142,6 +143,8 @@
 		D24E304A1937B50D002DA64F /* girl-alt3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "girl-alt3.png"; sourceTree = "<group>"; };
 		D25C5B761938F787000FD09C /* ManageExperiencesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ManageExperiencesTableViewController.h; sourceTree = "<group>"; };
 		D25C5B771938F787000FD09C /* ManageExperiencesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ManageExperiencesTableViewController.m; sourceTree = "<group>"; };
+		D25C5BC319390DEC000FD09C /* ImagePagerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImagePagerViewController.h; sourceTree = "<group>"; };
+		D25C5BC419390DEC000FD09C /* ImagePagerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImagePagerViewController.m; sourceTree = "<group>"; };
 		D260036D19344D71003239FE /* ManaNavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ManaNavigationViewController.h; sourceTree = "<group>"; };
 		D260036E19344D71003239FE /* ManaNavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ManaNavigationViewController.m; sourceTree = "<group>"; };
 		D26003701934506A003239FE /* ContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContentViewController.h; sourceTree = "<group>"; };
@@ -351,6 +354,8 @@
 				D24E300419366969002DA64F /* ManaMenuTableViewController.m */,
 				D25C5B761938F787000FD09C /* ManageExperiencesTableViewController.h */,
 				D25C5B771938F787000FD09C /* ManageExperiencesTableViewController.m */,
+				D25C5BC319390DEC000FD09C /* ImagePagerViewController.h */,
+				D25C5BC419390DEC000FD09C /* ImagePagerViewController.m */,
 			);
 			path = Mana;
 			sourceTree = "<group>";
@@ -643,6 +648,7 @@
 				D2FC8AAB19346213009D372C /* ManaProfileViewController.m in Sources */,
 				D260041119345EFB003239FE /* MPNotification.m in Sources */,
 				D209D2401923DB0300BE5F91 /* MonaFeedViewController.m in Sources */,
+				D25C5BC519390DEC000FD09C /* ImagePagerViewController.m in Sources */,
 				D26003E419345E5A003239FE /* MMDrawerController.m in Sources */,
 				D2FC8ABD19350653009D372C /* ManaUserManager.m in Sources */,
 				D260040E19345EFB003239FE /* Mixpanel.m in Sources */,

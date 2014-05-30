@@ -146,11 +146,12 @@
                     </navigationBar>
                     <connections>
                         <segue destination="pKy-L4-xhD" kind="relationship" relationship="rootViewController" id="GR5-A7-ECx"/>
+                        <segue destination="Vt1-st-E2E" kind="push" identifier="UNUSED" id="7Gq-y0-Pd6"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hwK-e6-pYi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1493" y="985"/>
+            <point key="canvasLocation" x="-1501" y="1011"/>
         </scene>
         <!--Feed View Controller-->
         <scene sceneID="hN1-Nc-0Th">
@@ -1432,16 +1433,24 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create an account now" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="7nx-vZ-TPT">
-                                <rect key="frame" x="20" y="81" width="280" height="161"/>
+                                <rect key="frame" x="20" y="381" width="280" height="42"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" id="HOX-9q-1Pa" customClass="FBLoginView">
-                                <rect key="frame" x="20" y="225" width="280" height="117"/>
+                                <rect key="frame" x="20" y="431" width="280" height="117"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                             </view>
+                            <containerView contentMode="scaleToFill" id="hsc-0C-xTT">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="373"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <connections>
+                                    <segue destination="QBg-2w-HUW" kind="embed" id="aV4-V7-34r"/>
+                                </connections>
+                            </containerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -1452,7 +1461,15 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6ly-an-CVN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2349" y="985"/>
+            <point key="canvasLocation" x="-2777" y="985"/>
+        </scene>
+        <!--Image Pager View Controller-->
+        <scene sceneID="doV-sF-3rP">
+            <objects>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="QBg-2w-HUW" customClass="ImagePagerViewController" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gd1-W2-Hl1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2338" y="1082"/>
         </scene>
         <!--Mana Menu Table View Controller-->
         <scene sceneID="5hR-ml-XSM">
@@ -1996,7 +2013,20 @@
                             <outlet property="delegate" destination="Vt1-st-E2E" id="Vgi-vf-IG2"/>
                         </connections>
                     </tableView>
+                    <toolbarItems>
+                        <barButtonItem title="Item" id="qLg-Cy-HOp"/>
+                        <barButtonItem title="Item" id="HpO-nz-8Nd"/>
+                        <barButtonItem title="Item" id="Zux-GU-wYY"/>
+                    </toolbarItems>
+                    <navigationItem key="navigationItem" id="wBy-KP-D2X">
+                        <barButtonItem key="leftBarButtonItem" image="hamburger" id="Ygn-De-rji">
+                            <connections>
+                                <action selector="leftBarButtonItemPressed:" destination="Vt1-st-E2E" id="NrR-3Q-uO7"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2kG-Cf-bFn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
