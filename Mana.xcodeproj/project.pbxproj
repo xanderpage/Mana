@@ -34,6 +34,7 @@
 		D24E304D1937B50D002DA64F /* girl-alt3.png in Resources */ = {isa = PBXBuildFile; fileRef = D24E304A1937B50D002DA64F /* girl-alt3.png */; };
 		D25C5B781938F787000FD09C /* ManageExperiencesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D25C5B771938F787000FD09C /* ManageExperiencesTableViewController.m */; };
 		D25C5BC519390DEC000FD09C /* ImagePagerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D25C5BC419390DEC000FD09C /* ImagePagerViewController.m */; };
+		D25C5BC81939147A000FD09C /* RSVPCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D25C5BC71939147A000FD09C /* RSVPCell.m */; };
 		D260036F19344D71003239FE /* ManaNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D260036E19344D71003239FE /* ManaNavigationViewController.m */; };
 		D26003721934506A003239FE /* ContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D26003711934506A003239FE /* ContentViewController.m */; };
 		D26003E319345E5A003239FE /* MMDrawerBarButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = D26003DB19345E5A003239FE /* MMDrawerBarButtonItem.m */; };
@@ -145,6 +146,8 @@
 		D25C5B771938F787000FD09C /* ManageExperiencesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ManageExperiencesTableViewController.m; sourceTree = "<group>"; };
 		D25C5BC319390DEC000FD09C /* ImagePagerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImagePagerViewController.h; sourceTree = "<group>"; };
 		D25C5BC419390DEC000FD09C /* ImagePagerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImagePagerViewController.m; sourceTree = "<group>"; };
+		D25C5BC61939147A000FD09C /* RSVPCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSVPCell.h; sourceTree = "<group>"; };
+		D25C5BC71939147A000FD09C /* RSVPCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSVPCell.m; sourceTree = "<group>"; };
 		D260036D19344D71003239FE /* ManaNavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ManaNavigationViewController.h; sourceTree = "<group>"; };
 		D260036E19344D71003239FE /* ManaNavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ManaNavigationViewController.m; sourceTree = "<group>"; };
 		D26003701934506A003239FE /* ContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContentViewController.h; sourceTree = "<group>"; };
@@ -356,6 +359,8 @@
 				D25C5B771938F787000FD09C /* ManageExperiencesTableViewController.m */,
 				D25C5BC319390DEC000FD09C /* ImagePagerViewController.h */,
 				D25C5BC419390DEC000FD09C /* ImagePagerViewController.m */,
+				D25C5BC61939147A000FD09C /* RSVPCell.h */,
+				D25C5BC71939147A000FD09C /* RSVPCell.m */,
 			);
 			path = Mana;
 			sourceTree = "<group>";
@@ -643,6 +648,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D260041A19345EFB003239FE /* UIColor+MPColor.m in Sources */,
+				D25C5BC81939147A000FD09C /* RSVPCell.m in Sources */,
 				D260041B19345EFB003239FE /* UIImage+MPAverageColor.m in Sources */,
 				D2432C1B192C253900A87951 /* HostDetailsTableViewController.m in Sources */,
 				D2FC8AAB19346213009D372C /* ManaProfileViewController.m in Sources */,
