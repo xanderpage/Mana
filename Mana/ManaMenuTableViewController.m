@@ -56,6 +56,9 @@
 - (IBAction)gotoProfileButtonTapped:(id)sender{
     [[NSNotificationCenter defaultCenter] postNotificationName:@"GotoProfile" object:nil];
 }
+- (IBAction)gotoManageExperiencesButtonTapped:(id)sender{
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"GotoManageExperiences" object:nil];
+}
 
 - (IBAction)logoutButtonTapped:(id)sender{
     [[ManaUserManager sharedInstance] logout];

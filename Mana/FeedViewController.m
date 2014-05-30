@@ -39,6 +39,13 @@
         
     }];
 }
+
+- (IBAction)rightBarButtonItemPressed:(id)sender{
+    [self.mm_drawerController openDrawerSide:MMDrawerSideRight animated:YES completion:^(BOOL finished) {
+        
+    }];
+    
+}
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];

@@ -33,20 +33,24 @@
 - (void) setup{
     NSLog(@"Setup Content Layout");
     self.centerViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"RootNavigation"];
-    self.leftDrawerViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"Menu"];
-    self.rightDrawerViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"Menu"];
+    self.leftDrawerViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"LeftMenu"];
+    self.rightDrawerViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"RightMenu"];
 
     [self setShowsShadow:NO];
     [self setRestorationIdentifier:@"MMDrawer"];
-    [self setMaximumRightDrawerWidth:200.0];
     [self setOpenDrawerGestureModeMask:MMOpenDrawerGestureModeNone];
-    [self setCloseDrawerGestureModeMask:MMOpenDrawerGestureModeNone];
+    [self setCloseDrawerGestureModeMask:MMOpenDrawerGestureModeAll];
     [self setStatusBarViewBackgroundColor:[UIColor whiteColor]];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(gotoProfile:) name:@"GotoProfile" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(gotoHost:) name:@"GotoHost" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(gotoFeed:) name:@"GotoFeed" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(gotoManageExperiences:) name:@"GotoManageExperiences" object:nil];
 
+}
+- (void) gotoManageExperiences:(NSNotification*)note{
+    UIViewController * feed = [self.storyboard instantiateViewControllerWithIdentifier:@"ManageExperiences"];
+    [self gotoViewController:feed];
 }
 - (void) gotoFeed:(NSNotification*)note{
     UIViewController * feed = [self.storyboard instantiateViewControllerWithIdentifier:@"Feed"];
