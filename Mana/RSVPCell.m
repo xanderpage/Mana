@@ -50,6 +50,10 @@
 }
 - (UICollectionViewCell*) collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     UICollectionViewCell * cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"Cell" forIndexPath:indexPath];
+    UIImageView * iv = [cell viewWithTag:100];
+    
+    iv.image = [UIImage imageNamed:[NSString stringWithFormat:@"girl-alt%d.png", (indexPath.item+1)]];
+    
     [self updateCounter];
     return cell;
 }

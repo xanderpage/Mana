@@ -28,16 +28,21 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    self.vcs = @[ @"girl-alt1.png", @"girl-alt2.png", @"girl-alt3.png" ];
+    self.vcs = @[ @"image1.jpg", @"image2.jpg", @"image3.jpg" ];
     self.dataSource = self;
     self.delegate = self;
-    NSArray *viewControllers = @[[self viewControllerAtIndex:0]];
-    [self setViewControllers:viewControllers direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
     
     UIPageControl *pageControl = [UIPageControl appearance];
     pageControl.pageIndicatorTintColor = [UIColor lightGrayColor];
     pageControl.currentPageIndicatorTintColor = [UIColor blackColor];
     pageControl.backgroundColor = [UIColor whiteColor];
+    
+}
+- (void) viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    
+    NSArray *viewControllers = @[[self viewControllerAtIndex:0]];
+    [self setViewControllers:viewControllers direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
     
 }
 - (UIViewController*) viewControllerAtIndex:(NSInteger)index{

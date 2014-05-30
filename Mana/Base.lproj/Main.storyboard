@@ -1903,7 +1903,7 @@
                                                                 <rect key="frame" x="0.0" y="0.0" width="274" height="250"/>
                                                                 <autoresizingMask key="autoresizingMask"/>
                                                                 <subviews>
-                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pretty normal looking girl.jpg" id="JCk-LM-Ckd">
+                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="100" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pretty normal looking girl.jpg" id="JCk-LM-Ckd">
                                                                         <rect key="frame" x="46" y="0.0" width="183" height="177"/>
                                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                     </imageView>
