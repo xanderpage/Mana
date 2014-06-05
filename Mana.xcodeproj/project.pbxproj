@@ -616,6 +616,9 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "Scott Shebby";
 				TargetAttributes = {
+					D209D1FE1923DA7200BE5F91 = {
+						DevelopmentTeam = A82MSV3363;
+					};
 					D209D2221923DA7200BE5F91 = {
 						TestTargetID = D209D1FE1923DA7200BE5F91;
 					};
@@ -861,6 +864,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -879,6 +883,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
