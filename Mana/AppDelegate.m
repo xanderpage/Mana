@@ -10,6 +10,8 @@
 #import "Mixpanel.h"
 #import "ManaLoginViewController.h"
 #import "ContentViewController.h"
+#import "ManaNavigationViewController.h"
+#import "REFrostedViewController.h"
 
 @implementation AppDelegate
 
@@ -50,13 +52,25 @@
     return YES;
 }
 
+
+
 - (void) loggedIn:(NSNotification*)note{
-    if( [self.window.rootViewController isKindOfClass:[ContentViewController class]] ) return;
+    if( [self.window.rootViewController isKindOfClass:[REFrostedViewController class]] ) return;
 
-    ContentViewController * vc = (ContentViewController*)[[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"Content"];
     
-
-    [self.window setRootViewController:vc];
+    ManaNavigationViewController * nav = (ManaNavigationViewController*)[[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"RootNavigation"];
+    
+    UIViewController * leftNav = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"LeftMenu"];
+    
+    REFrostedViewController *frostedViewController = [[REFrostedViewController alloc] initWithContentViewController:nav menuViewController:leftNav];
+    frostedViewController.direction = REFrostedViewControllerDirectionLeft;
+    frostedViewController.panGestureEnabled = NO;
+    frostedViewController.liveBlur             = YES;
+//    frostedViewController.liveBlurBackgroundStyle = REFrostedViewControllerLiveBackgroundStyleLight;
+//    frostedViewController.blurRadius           = 3;
+//    frostedViewController.backgroundFadeAmount = 0.6;
+    [self.window setRootViewController:frostedViewController];
+   
 }
 - (void) loggedOut:(NSNotification*)note{
     if( [self.window.rootViewController isKindOfClass:[ManaLoginViewController class]] ) return;

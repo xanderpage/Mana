@@ -7,7 +7,7 @@
 //
 
 #import "ManageExperiencesTableViewController.h"
-#import "UIViewController+MMDrawerController.h"
+#import "REFrostedViewController.h"
 
 @interface ManageExperiencesTableViewController ()
 
@@ -41,9 +41,7 @@
     // Dispose of any resources that can be recreated.
 }
 - (IBAction)leftBarButtonItemPressed:(id)sender{
-    [self.mm_drawerController openDrawerSide:MMDrawerSideLeft animated:YES completion:^(BOOL finished) {
-        
-    }];
+    [self.frostedViewController presentMenuViewController];
 }
 
 @end

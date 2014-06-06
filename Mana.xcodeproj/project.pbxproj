@@ -65,11 +65,26 @@
 		D260041C19345EFB003239FE /* UIImage+MPImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = D260040A19345EFB003239FE /* UIImage+MPImageEffects.m */; };
 		D260041D19345EFB003239FE /* UIView+MPSnapshotImage.m in Sources */ = {isa = PBXBuildFile; fileRef = D260040C19345EFB003239FE /* UIView+MPSnapshotImage.m */; };
 		D260041F1934608F003239FE /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D260041E1934608F003239FE /* FacebookSDK.framework */; };
+		D27D5CE1194152F300F2B4BB /* RECommonFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = D27D5CD1194152F300F2B4BB /* RECommonFunctions.m */; };
+		D27D5CE2194152F300F2B4BB /* REFrostedContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D27D5CD3194152F300F2B4BB /* REFrostedContainerViewController.m */; };
+		D27D5CE3194152F300F2B4BB /* REFrostedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D27D5CD5194152F300F2B4BB /* REFrostedViewController.m */; };
+		D27D5CE4194152F300F2B4BB /* UIImage+REFrostedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D27D5CD7194152F300F2B4BB /* UIImage+REFrostedViewController.m */; };
+		D27D5CE5194152F300F2B4BB /* UIView+REFrostedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D27D5CD9194152F300F2B4BB /* UIView+REFrostedViewController.m */; };
+		D27D5CE6194152F300F2B4BB /* UIViewController+REFrostedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D27D5CDB194152F300F2B4BB /* UIViewController+REFrostedViewController.m */; };
+		D27D5CE7194152F300F2B4BB /* SHViewPager.m in Sources */ = {isa = PBXBuildFile; fileRef = D27D5CDE194152F300F2B4BB /* SHViewPager.m */; };
+		D27D5CE8194152F300F2B4BB /* SHViewPagerController.m in Sources */ = {isa = PBXBuildFile; fileRef = D27D5CE0194152F300F2B4BB /* SHViewPagerController.m */; };
+		D27D5CEB1941624400F2B4BB /* horizontal_line@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D27D5CE91941624400F2B4BB /* horizontal_line@2x.png */; };
+		D27D5CEC1941624400F2B4BB /* horizontal_line_moving@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D27D5CEA1941624400F2B4BB /* horizontal_line_moving@2x.png */; };
+		D27D5CEE19417A0F00F2B4BB /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D27D5CED19417A0F00F2B4BB /* Accelerate.framework */; };
+		D27D5CF11941981C00F2B4BB /* UIViewController+RSVPButton.m in Sources */ = {isa = PBXBuildFile; fileRef = D27D5CF01941981C00F2B4BB /* UIViewController+RSVPButton.m */; };
+		D27D5CF51942151700F2B4BB /* attend1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D27D5CF21942151700F2B4BB /* attend1.jpg */; };
+		D27D5CF61942151700F2B4BB /* attend2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D27D5CF31942151700F2B4BB /* attend2.jpg */; };
+		D27D5CF71942151700F2B4BB /* attend3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D27D5CF41942151700F2B4BB /* attend3.jpg */; };
+		D27D5CFA19421AA700F2B4BB /* ManaUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D27D5CF919421AA700F2B4BB /* ManaUserViewController.m */; };
 		D299B221192BCD3100A47540 /* ExperienceCategoryTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D299B220192BCD3100A47540 /* ExperienceCategoryTableViewController.m */; };
 		D2BD732A192E8121007B73C5 /* ManaTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2BD7329192E8121007B73C5 /* ManaTableViewController.m */; };
 		D2BD732E192E88D6007B73C5 /* pretty normal looking girl.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D2BD732D192E88D6007B73C5 /* pretty normal looking girl.jpg */; };
 		D2BD7332192EB921007B73C5 /* photo-background.png in Resources */ = {isa = PBXBuildFile; fileRef = D2BD7331192EB921007B73C5 /* photo-background.png */; };
-		D2BD7334192ECC41007B73C5 /* ExperienceCard.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2BD7333192ECC41007B73C5 /* ExperienceCard.xib */; };
 		D2E16D87192BC7E4008DD0B0 /* ExperienceTypeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2E16D86192BC7E4008DD0B0 /* ExperienceTypeTableViewController.m */; };
 		D2F8DB6C192FC1B70036E267 /* FeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2F8DB6B192FC1B70036E267 /* FeedViewController.m */; };
 		D2FC8AAB19346213009D372C /* ManaProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2FC8AAA19346213009D372C /* ManaProfileViewController.m */; };
@@ -201,13 +216,38 @@
 		D260040B19345EFB003239FE /* UIView+MPSnapshotImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+MPSnapshotImage.h"; sourceTree = "<group>"; };
 		D260040C19345EFB003239FE /* UIView+MPSnapshotImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+MPSnapshotImage.m"; sourceTree = "<group>"; };
 		D260041E1934608F003239FE /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
+		D27D5CD0194152F300F2B4BB /* RECommonFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RECommonFunctions.h; sourceTree = "<group>"; };
+		D27D5CD1194152F300F2B4BB /* RECommonFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RECommonFunctions.m; sourceTree = "<group>"; };
+		D27D5CD2194152F300F2B4BB /* REFrostedContainerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = REFrostedContainerViewController.h; sourceTree = "<group>"; };
+		D27D5CD3194152F300F2B4BB /* REFrostedContainerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = REFrostedContainerViewController.m; sourceTree = "<group>"; };
+		D27D5CD4194152F300F2B4BB /* REFrostedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = REFrostedViewController.h; sourceTree = "<group>"; };
+		D27D5CD5194152F300F2B4BB /* REFrostedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = REFrostedViewController.m; sourceTree = "<group>"; };
+		D27D5CD6194152F300F2B4BB /* UIImage+REFrostedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+REFrostedViewController.h"; sourceTree = "<group>"; };
+		D27D5CD7194152F300F2B4BB /* UIImage+REFrostedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+REFrostedViewController.m"; sourceTree = "<group>"; };
+		D27D5CD8194152F300F2B4BB /* UIView+REFrostedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+REFrostedViewController.h"; sourceTree = "<group>"; };
+		D27D5CD9194152F300F2B4BB /* UIView+REFrostedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+REFrostedViewController.m"; sourceTree = "<group>"; };
+		D27D5CDA194152F300F2B4BB /* UIViewController+REFrostedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+REFrostedViewController.h"; sourceTree = "<group>"; };
+		D27D5CDB194152F300F2B4BB /* UIViewController+REFrostedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+REFrostedViewController.m"; sourceTree = "<group>"; };
+		D27D5CDD194152F300F2B4BB /* SHViewPager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHViewPager.h; sourceTree = "<group>"; };
+		D27D5CDE194152F300F2B4BB /* SHViewPager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHViewPager.m; sourceTree = "<group>"; };
+		D27D5CDF194152F300F2B4BB /* SHViewPagerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHViewPagerController.h; sourceTree = "<group>"; };
+		D27D5CE0194152F300F2B4BB /* SHViewPagerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHViewPagerController.m; sourceTree = "<group>"; };
+		D27D5CE91941624400F2B4BB /* horizontal_line@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "horizontal_line@2x.png"; sourceTree = "<group>"; };
+		D27D5CEA1941624400F2B4BB /* horizontal_line_moving@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "horizontal_line_moving@2x.png"; sourceTree = "<group>"; };
+		D27D5CED19417A0F00F2B4BB /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
+		D27D5CEF1941981C00F2B4BB /* UIViewController+RSVPButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+RSVPButton.h"; sourceTree = "<group>"; };
+		D27D5CF01941981C00F2B4BB /* UIViewController+RSVPButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+RSVPButton.m"; sourceTree = "<group>"; };
+		D27D5CF21942151700F2B4BB /* attend1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = attend1.jpg; sourceTree = "<group>"; };
+		D27D5CF31942151700F2B4BB /* attend2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = attend2.jpg; sourceTree = "<group>"; };
+		D27D5CF41942151700F2B4BB /* attend3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = attend3.jpg; sourceTree = "<group>"; };
+		D27D5CF819421AA700F2B4BB /* ManaUserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ManaUserViewController.h; sourceTree = "<group>"; };
+		D27D5CF919421AA700F2B4BB /* ManaUserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ManaUserViewController.m; sourceTree = "<group>"; };
 		D299B21F192BCD3100A47540 /* ExperienceCategoryTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExperienceCategoryTableViewController.h; sourceTree = "<group>"; };
 		D299B220192BCD3100A47540 /* ExperienceCategoryTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExperienceCategoryTableViewController.m; sourceTree = "<group>"; };
 		D2BD7328192E8121007B73C5 /* ManaTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ManaTableViewController.h; sourceTree = "<group>"; };
 		D2BD7329192E8121007B73C5 /* ManaTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ManaTableViewController.m; sourceTree = "<group>"; };
 		D2BD732D192E88D6007B73C5 /* pretty normal looking girl.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "pretty normal looking girl.jpg"; sourceTree = "<group>"; };
 		D2BD7331192EB921007B73C5 /* photo-background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "photo-background.png"; sourceTree = "<group>"; };
-		D2BD7333192ECC41007B73C5 /* ExperienceCard.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExperienceCard.xib; sourceTree = "<group>"; };
 		D2E16D85192BC7E4008DD0B0 /* ExperienceTypeTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExperienceTypeTableViewController.h; sourceTree = "<group>"; };
 		D2E16D86192BC7E4008DD0B0 /* ExperienceTypeTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExperienceTypeTableViewController.m; sourceTree = "<group>"; };
 		D2F8DB6A192FC1B70036E267 /* FeedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedViewController.h; sourceTree = "<group>"; };
@@ -262,6 +302,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D27D5CEE19417A0F00F2B4BB /* Accelerate.framework in Frameworks */,
 				D2FC8AB71934F9C8009D372C /* SystemConfiguration.framework in Frameworks */,
 				D2FC8AB51934F9C2009D372C /* Security.framework in Frameworks */,
 				D2FC8AB31934F9B6009D372C /* CFNetwork.framework in Frameworks */,
@@ -292,7 +333,6 @@
 		D209D1F61923DA7200BE5F91 = {
 			isa = PBXGroup;
 			children = (
-				D2BD7333192ECC41007B73C5 /* ExperienceCard.xib */,
 				D209D2141923DA7200BE5F91 /* Main.storyboard */,
 				D25C5BC91939183F000FD09C /* Images */,
 				D209D2081923DA7200BE5F91 /* Mana */,
@@ -315,6 +355,7 @@
 		D209D2011923DA7200BE5F91 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D27D5CED19417A0F00F2B4BB /* Accelerate.framework */,
 				D2FC8AB61934F9C8009D372C /* SystemConfiguration.framework */,
 				D2FC8AB41934F9C2009D372C /* Security.framework */,
 				D2FC8AB21934F9B6009D372C /* CFNetwork.framework */,
@@ -334,27 +375,12 @@
 		D209D2081923DA7200BE5F91 /* Mana */ = {
 			isa = PBXGroup;
 			children = (
+				D27D5CFD1942651500F2B4BB /* Views */,
+				D27D5CFC1942650000F2B4BB /* Categories */,
+				D27D5CFB1942645200F2B4BB /* Data */,
 				D209D2111923DA7200BE5F91 /* AppDelegate.h */,
 				D209D2121923DA7200BE5F91 /* AppDelegate.m */,
 				D209D2091923DA7200BE5F91 /* Supporting Files */,
-				D2FC8AEA1935177B009D372C /* NSDate+ShortCuts.h */,
-				D2FC8AEB1935177B009D372C /* NSDate+ShortCuts.m */,
-				D2E16D84192BC7B8008DD0B0 /* Host Creation */,
-				D24E3006193678EC002DA64F /* Feed */,
-				D260036D19344D71003239FE /* ManaNavigationViewController.h */,
-				D260036E19344D71003239FE /* ManaNavigationViewController.m */,
-				D26003701934506A003239FE /* ContentViewController.h */,
-				D26003711934506A003239FE /* ContentViewController.m */,
-				D2FC8AA919346213009D372C /* ManaProfileViewController.h */,
-				D2FC8AAA19346213009D372C /* ManaProfileViewController.m */,
-				D25C5BCA19391867000FD09C /* Login */,
-				D25C5BCB19391870000FD09C /* Managers */,
-				D24E300319366969002DA64F /* ManaMenuTableViewController.h */,
-				D24E300419366969002DA64F /* ManaMenuTableViewController.m */,
-				D25C5B761938F787000FD09C /* ManageExperiencesTableViewController.h */,
-				D25C5B771938F787000FD09C /* ManageExperiencesTableViewController.m */,
-				D25C5BC61939147A000FD09C /* RSVPCell.h */,
-				D25C5BC71939147A000FD09C /* RSVPCell.m */,
 			);
 			path = Mana;
 			sourceTree = "<group>";
@@ -402,6 +428,11 @@
 		D25C5BC91939183F000FD09C /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				D27D5CF21942151700F2B4BB /* attend1.jpg */,
+				D27D5CF31942151700F2B4BB /* attend2.jpg */,
+				D27D5CF41942151700F2B4BB /* attend3.jpg */,
+				D27D5CE91941624400F2B4BB /* horizontal_line@2x.png */,
+				D27D5CEA1941624400F2B4BB /* horizontal_line_moving@2x.png */,
 				D25C5BCC19391A1F000FD09C /* image1.jpg */,
 				D25C5BCD19391A1F000FD09C /* image2.jpg */,
 				D25C5BCE19391A1F000FD09C /* image3.jpg */,
@@ -439,6 +470,8 @@
 		D26003D819345E4C003239FE /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				D27D5CCF194152F300F2B4BB /* REFrostedViewController */,
+				D27D5CDC194152F300F2B4BB /* SHViewPager */,
 				D2FC8ABE19350B1D009D372C /* SDWebImage */,
 				D26003EF19345EFB003239FE /* Mixpanel */,
 				D26003E719345E63003239FE /* KIImagePager */,
@@ -510,6 +543,105 @@
 			path = Mixpanel;
 			sourceTree = "<group>";
 		};
+		D27D5CCF194152F300F2B4BB /* REFrostedViewController */ = {
+			isa = PBXGroup;
+			children = (
+				D27D5CD0194152F300F2B4BB /* RECommonFunctions.h */,
+				D27D5CD1194152F300F2B4BB /* RECommonFunctions.m */,
+				D27D5CD2194152F300F2B4BB /* REFrostedContainerViewController.h */,
+				D27D5CD3194152F300F2B4BB /* REFrostedContainerViewController.m */,
+				D27D5CD4194152F300F2B4BB /* REFrostedViewController.h */,
+				D27D5CD5194152F300F2B4BB /* REFrostedViewController.m */,
+				D27D5CD6194152F300F2B4BB /* UIImage+REFrostedViewController.h */,
+				D27D5CD7194152F300F2B4BB /* UIImage+REFrostedViewController.m */,
+				D27D5CD8194152F300F2B4BB /* UIView+REFrostedViewController.h */,
+				D27D5CD9194152F300F2B4BB /* UIView+REFrostedViewController.m */,
+				D27D5CDA194152F300F2B4BB /* UIViewController+REFrostedViewController.h */,
+				D27D5CDB194152F300F2B4BB /* UIViewController+REFrostedViewController.m */,
+			);
+			path = REFrostedViewController;
+			sourceTree = "<group>";
+		};
+		D27D5CDC194152F300F2B4BB /* SHViewPager */ = {
+			isa = PBXGroup;
+			children = (
+				D27D5CDD194152F300F2B4BB /* SHViewPager.h */,
+				D27D5CDE194152F300F2B4BB /* SHViewPager.m */,
+				D27D5CDF194152F300F2B4BB /* SHViewPagerController.h */,
+				D27D5CE0194152F300F2B4BB /* SHViewPagerController.m */,
+			);
+			path = SHViewPager;
+			sourceTree = "<group>";
+		};
+		D27D5CFB1942645200F2B4BB /* Data */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Data;
+			sourceTree = "<group>";
+		};
+		D27D5CFC1942650000F2B4BB /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				D2FC8AEA1935177B009D372C /* NSDate+ShortCuts.h */,
+				D2FC8AEB1935177B009D372C /* NSDate+ShortCuts.m */,
+				D2432C10192C236400A87951 /* UITableViewController+NextButtonSegue.h */,
+				D2432C11192C236400A87951 /* UITableViewController+NextButtonSegue.m */,
+				D27D5CEF1941981C00F2B4BB /* UIViewController+RSVPButton.h */,
+				D27D5CF01941981C00F2B4BB /* UIViewController+RSVPButton.m */,
+			);
+			name = Categories;
+			sourceTree = "<group>";
+		};
+		D27D5CFD1942651500F2B4BB /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D2E16D84192BC7B8008DD0B0 /* Host Creation */,
+				D24E3006193678EC002DA64F /* Feed */,
+				D284446A19403F6800630BA1 /* Navigation */,
+				D284446B19403F7E00630BA1 /* Profiles */,
+				D25C5BCA19391867000FD09C /* Login */,
+				D25C5BCB19391870000FD09C /* Managers */,
+				D284446C19403F8F00630BA1 /* Experiences */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		D284446A19403F6800630BA1 /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				D260036D19344D71003239FE /* ManaNavigationViewController.h */,
+				D260036E19344D71003239FE /* ManaNavigationViewController.m */,
+				D26003701934506A003239FE /* ContentViewController.h */,
+				D26003711934506A003239FE /* ContentViewController.m */,
+				D24E300319366969002DA64F /* ManaMenuTableViewController.h */,
+				D24E300419366969002DA64F /* ManaMenuTableViewController.m */,
+			);
+			name = Navigation;
+			sourceTree = "<group>";
+		};
+		D284446B19403F7E00630BA1 /* Profiles */ = {
+			isa = PBXGroup;
+			children = (
+				D2FC8AA919346213009D372C /* ManaProfileViewController.h */,
+				D2FC8AAA19346213009D372C /* ManaProfileViewController.m */,
+				D27D5CF819421AA700F2B4BB /* ManaUserViewController.h */,
+				D27D5CF919421AA700F2B4BB /* ManaUserViewController.m */,
+			);
+			name = Profiles;
+			sourceTree = "<group>";
+		};
+		D284446C19403F8F00630BA1 /* Experiences */ = {
+			isa = PBXGroup;
+			children = (
+				D25C5B761938F787000FD09C /* ManageExperiencesTableViewController.h */,
+				D25C5B771938F787000FD09C /* ManageExperiencesTableViewController.m */,
+				D25C5BC61939147A000FD09C /* RSVPCell.h */,
+				D25C5BC71939147A000FD09C /* RSVPCell.m */,
+			);
+			name = Experiences;
+			sourceTree = "<group>";
+		};
 		D2E16D84192BC7B8008DD0B0 /* Host Creation */ = {
 			isa = PBXGroup;
 			children = (
@@ -519,8 +651,6 @@
 				D299B220192BCD3100A47540 /* ExperienceCategoryTableViewController.m */,
 				D2432C0B192BD11400A87951 /* ExperienceLocationTableViewController.h */,
 				D2432C0C192BD11400A87951 /* ExperienceLocationTableViewController.m */,
-				D2432C10192C236400A87951 /* UITableViewController+NextButtonSegue.h */,
-				D2432C11192C236400A87951 /* UITableViewController+NextButtonSegue.m */,
 				D2432C13192C24F200A87951 /* HostWhenTableViewController.h */,
 				D2432C14192C24F200A87951 /* HostWhenTableViewController.m */,
 				D2432C16192C251C00A87951 /* HostNumbersTableViewController.h */,
@@ -650,17 +780,21 @@
 			files = (
 				D260040D19345EFB003239FE /* Media.xcassets in Resources */,
 				D209D21E1923DA7200BE5F91 /* Images.xcassets in Resources */,
+				D27D5CF51942151700F2B4BB /* attend1.jpg in Resources */,
 				D24E304D1937B50D002DA64F /* girl-alt3.png in Resources */,
+				D27D5CEB1941624400F2B4BB /* horizontal_line@2x.png in Resources */,
+				D27D5CF71942151700F2B4BB /* attend3.jpg in Resources */,
 				D209D20D1923DA7200BE5F91 /* InfoPlist.strings in Resources */,
 				D209D2161923DA7200BE5F91 /* Main.storyboard in Resources */,
 				D2BD732E192E88D6007B73C5 /* pretty normal looking girl.jpg in Resources */,
 				D260040F19345EFB003239FE /* MPCloseBtn.png in Resources */,
 				D26003EC19345E63003239FE /* KICamera.png in Resources */,
-				D2BD7334192ECC41007B73C5 /* ExperienceCard.xib in Resources */,
 				D26003ED19345E63003239FE /* KICamera@2x.png in Resources */,
+				D27D5CF61942151700F2B4BB /* attend2.jpg in Resources */,
 				D260041019345EFB003239FE /* MPCloseBtn@2x.png in Resources */,
 				D25C5BD119391A1F000FD09C /* image3.jpg in Resources */,
 				D24E304B1937B50D002DA64F /* girl-alt1.png in Resources */,
+				D27D5CEC1941624400F2B4BB /* horizontal_line_moving@2x.png in Resources */,
 				D2BD7332192EB921007B73C5 /* photo-background.png in Resources */,
 				D260041519345EFB003239FE /* MPSurvey.storyboard in Resources */,
 				D260041219345EFB003239FE /* MPNotification.storyboard in Resources */,
@@ -686,6 +820,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D27D5CE8194152F300F2B4BB /* SHViewPagerController.m in Sources */,
 				D260041A19345EFB003239FE /* UIColor+MPColor.m in Sources */,
 				D25C5BC81939147A000FD09C /* RSVPCell.m in Sources */,
 				D260041B19345EFB003239FE /* UIImage+MPAverageColor.m in Sources */,
@@ -694,6 +829,7 @@
 				D260041119345EFB003239FE /* MPNotification.m in Sources */,
 				D209D2401923DB0300BE5F91 /* MonaFeedViewController.m in Sources */,
 				D25C5BC519390DEC000FD09C /* ImagePagerViewController.m in Sources */,
+				D27D5CE6194152F300F2B4BB /* UIViewController+REFrostedViewController.m in Sources */,
 				D26003E419345E5A003239FE /* MMDrawerController.m in Sources */,
 				D2FC8ABD19350653009D372C /* ManaUserManager.m in Sources */,
 				D260040E19345EFB003239FE /* Mixpanel.m in Sources */,
@@ -705,16 +841,22 @@
 				D2FC8AE019350B1D009D372C /* SDWebImageDecoder.m in Sources */,
 				D2E16D87192BC7E4008DD0B0 /* ExperienceTypeTableViewController.m in Sources */,
 				D2FC8AEC1935177B009D372C /* NSDate+ShortCuts.m in Sources */,
+				D27D5CE1194152F300F2B4BB /* RECommonFunctions.m in Sources */,
 				D2FC8AE319350B1D009D372C /* SDWebImageManager.m in Sources */,
 				D260041919345EFB003239FE /* NSData+MPBase64.m in Sources */,
 				D260041719345EFB003239FE /* MPSurveyQuestion.m in Sources */,
+				D27D5CF11941981C00F2B4BB /* UIViewController+RSVPButton.m in Sources */,
 				D2FC8AE619350B1D009D372C /* UIImage+GIF.m in Sources */,
 				D2432C12192C236400A87951 /* UITableViewController+NextButtonSegue.m in Sources */,
+				D27D5CE2194152F300F2B4BB /* REFrostedContainerViewController.m in Sources */,
 				D260041819345EFB003239FE /* MPSurveyQuestionViewController.m in Sources */,
 				D2FC8ADE19350B1D009D372C /* SDImageCache.m in Sources */,
+				D27D5CE5194152F300F2B4BB /* UIView+REFrostedViewController.m in Sources */,
 				D2FC8ADC19350B1D009D372C /* MKAnnotationView+WebCache.m in Sources */,
+				D27D5CFA19421AA700F2B4BB /* ManaUserViewController.m in Sources */,
 				D2FC8AE219350B1D009D372C /* SDWebImageDownloaderOperation.m in Sources */,
 				D260041D19345EFB003239FE /* UIView+MPSnapshotImage.m in Sources */,
+				D27D5CE7194152F300F2B4BB /* SHViewPager.m in Sources */,
 				D26003E519345E5A003239FE /* MMDrawerVisualState.m in Sources */,
 				D2FC8AE919350B1D009D372C /* UIImageView+WebCache.m in Sources */,
 				D2FC8AE519350B1D009D372C /* UIButton+WebCache.m in Sources */,
@@ -724,7 +866,9 @@
 				D2432C0D192BD11400A87951 /* ExperienceLocationTableViewController.m in Sources */,
 				D260041C19345EFB003239FE /* UIImage+MPImageEffects.m in Sources */,
 				D26003721934506A003239FE /* ContentViewController.m in Sources */,
+				D27D5CE4194152F300F2B4BB /* UIImage+REFrostedViewController.m in Sources */,
 				D2FC8AE819350B1D009D372C /* UIImage+WebP.m in Sources */,
+				D27D5CE3194152F300F2B4BB /* REFrostedViewController.m in Sources */,
 				D260041319345EFB003239FE /* MPNotificationViewController.m in Sources */,
 				D24E300519366969002DA64F /* ManaMenuTableViewController.m in Sources */,
 				D260041419345EFB003239FE /* MPSurvey.m in Sources */,

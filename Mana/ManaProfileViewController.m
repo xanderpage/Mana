@@ -8,7 +8,7 @@
 
 #import "ManaProfileViewController.h"
 #import "NSDate+ShortCuts.h"
-#import "UIViewController+MMDrawerController.h"
+#import "REFrostedViewController.h"
 
 
 @interface ManaProfileViewController ()
@@ -101,10 +101,9 @@
 }
 
 
-- (IBAction)leftBarButtonItemPressed:(id)sender{
-    [self.mm_drawerController openDrawerSide:MMDrawerSideLeft animated:YES completion:^(BOOL finished) {
-        
-    }];
+- (IBAction)leftBarButtonItemPressed:(id)sender
+{
+    [self.frostedViewController presentMenuViewController];
 }
 - (void)didReceiveMemoryWarning
 {

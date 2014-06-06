@@ -7,6 +7,8 @@
 //
 
 #import "ManaNavigationViewController.h"
+#import "REFrostedViewController.h"
+#import "UIViewController+RSVPButton.h"
 
 @implementation ManaNavigationViewController
 - (void) awakeFromNib
@@ -15,10 +17,33 @@
     [self setup];
 }
 
-
+- (id) initWithCoder:(NSCoder *)aDecoder{
+    self = [super initWithCoder:aDecoder];
+    [self setup];
+    return self;
+}
 
 - (void) setup{
-    self.view.backgroundColor = [UIColor whiteColor];
+ 
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(setRootView:) name:@"GotoProfile" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(setRootView:) name:@"GotoHost" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(setRootView:) name:@"GotoFeed" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(setRootView:) name:@"GotoManageExperiences" object:nil];
+
+}
+
+
+-(void) setRootView:(NSNotification*)note
+{
+    [self removeButton];
+    NSLog(@"Note: %@", note.object);
+    UIViewController * root = [self.storyboard instantiateViewControllerWithIdentifier:note.object];
+    self.viewControllers = @[root];
+    [self.frostedViewController hideMenuViewController];
+    
+   
+
 }
 
 

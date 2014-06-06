@@ -42,5 +42,9 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)saveButtonTapped:(id)sender
+{
+    [self performSegueWithIdentifier:@"Confirm" sender:nil];
+}
 
 @end

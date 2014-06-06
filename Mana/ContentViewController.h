@@ -6,8 +6,9 @@
 //  Copyright (c) 2014 Scott Shebby. All rights reserved.
 //
 #import <UIKit/UIKit.h>
-#import "MMDrawerController+Subclass.h"
+#import "SHViewPager.h"
+#import "SHViewPagerController.h"
 
-@interface ContentViewController : MMDrawerController
+@interface ContentViewController : SHViewPagerController
 
 @end

@@ -7,7 +7,7 @@
 //
 
 #import "FeedViewController.h"
-#import "UIViewController+MMDrawerController.h"
+#import "UIViewController+RSVPButton.h"
 
 @interface FeedViewController ()
 @property(nonatomic) IBOutlet UIScrollView * scrollView;
@@ -33,17 +33,27 @@
     
     self.scrollView.contentSize = CGSizeMake(self.view.frame.size.width, 630);
     self.scrollView.contentOffset = CGPointMake(0, 200);
+
+}
+
+- (void) viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    [self addButton];
+}
+- (void) viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    [self removeButton];
+}
+- (void) viewDidDisappear:(BOOL)animated{
+    [super viewDidDisappear:animated];
+}
+- (void) dealloc{
 }
 - (IBAction)leftBarButtonItemPressed:(id)sender{
-    [self.mm_drawerController openDrawerSide:MMDrawerSideLeft animated:YES completion:^(BOOL finished) {
-        
-    }];
+ 
 }
 
 - (IBAction)rightBarButtonItemPressed:(id)sender{
-    [self.mm_drawerController openDrawerSide:MMDrawerSideRight animated:YES completion:^(BOOL finished) {
-        
-    }];
     
 }
 - (void)didReceiveMemoryWarning
