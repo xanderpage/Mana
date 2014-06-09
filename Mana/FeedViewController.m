@@ -34,6 +34,14 @@
     self.scrollView.contentSize = CGSizeMake(self.view.frame.size.width, 630);
     self.scrollView.contentOffset = CGPointMake(0, 200);
 
+    
+    Experience * exp = [Experience create];
+    [exp setTitle:@"A fun time"];
+    [exp setDescription:@"Have fun at the beach with some friends."];
+    [exp addImage:[UIImage imageNamed:@"email-icon"]];
+    [exp setManaValue:100];
+    [exp setLocation:CLLocationCoordinate2DMake(36.03332, 55.48399) withName:@"San Diego, CA"];
+    
 }
 
 - (void) viewDidAppear:(BOOL)animated{

@@ -8,6 +8,5 @@
 
 #import <UIKit/UIKit.h>
 
-@interface HostDetailsTableViewController : UITableViewController
-
+@interface HostDetailsTableViewController : UITableViewController<UIImagePickerControllerDelegate>
 @end

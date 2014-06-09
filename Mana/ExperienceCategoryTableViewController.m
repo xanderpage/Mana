@@ -73,6 +73,12 @@
     return self.categories.count-1; //first cell is the descrioption
 }
 
+- (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    NSString * cat = [self.categories objectAtIndex:indexPath.row];
+    
+    [[ManaExperienceCreator sharedInstance] beginCreatingExperience];
+    [[ManaExperienceCreator sharedInstance].experience setCategory:cat];
+}
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {

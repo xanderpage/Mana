@@ -12,7 +12,8 @@
 @interface ManaTableViewController ()
 @property(nonatomic) IBOutlet UISlider * slider;
 @property(nonatomic) IBOutlet UILabel  * manaCostLabel;
-
+@property(nonatomic) IBOutlet UITextField * costTextField;
+@property(nonatomic) IBOutlet UITextField * prepTextField;
 @end
 
 @implementation ManaTableViewController
@@ -38,15 +39,34 @@
     
     self.tableView.tableHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, self.tableView.bounds.size.width, 0.01f)];
 }
+
+
+
 - (void) viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    [self addNextButton];
+    [self addNextButtonWithDelegate:self];
+}
+- (void) nextButtonTapped:(id)sender{
+    float cost = [self.costTextField.text floatValue];
+    float prep = [self.prepTextField.text floatValue];
+    float total= self.slider.value;
+    
+    
+    [[ManaExperienceCreator sharedInstance].experience setCost:cost];
+    [[ManaExperienceCreator sharedInstance].experience setPrepTime:prep];
+    [[ManaExperienceCreator sharedInstance].experience setTotalManaValue:total];
+    
+    [self performSegueWithIdentifier:@"next" sender:self];
 }
 - (void) viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
     [self removeNextButton];
 }
 - (BOOL) tableView:(UITableView *)tableView shouldHighlightRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    [self.costTextField resignFirstResponder];
+    [self.prepTextField resignFirstResponder];
+    
     return NO;
 }
 

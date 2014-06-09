@@ -633,6 +633,9 @@
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="g4d-7j-9Vo">
                                                     <rect key="frame" x="244" y="6" width="51" height="31"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <connections>
+                                                        <action selector="anytimeSwitchAction:" destination="6wx-Y5-dYh" eventType="valueChanged" id="vHo-tM-QDp"/>
+                                                    </connections>
                                                 </switch>
                                             </subviews>
                                         </tableViewCellContentView>
@@ -677,9 +680,22 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Duration" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="eMs-Lr-Qe9">
-                                                    <rect key="frame" x="127" y="10" width="66" height="24"/>
+                                                    <rect key="frame" x="20" y="10" width="66" height="24"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="17"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <stepper opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="2" minimumValue="1" maximumValue="100" id="94f-oM-0sJ">
+                                                    <rect key="frame" x="206" y="7" width="94" height="29"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                    <connections>
+                                                        <action selector="durationStepperAction:" destination="6wx-Y5-dYh" eventType="valueChanged" id="FeC-Nc-1n9"/>
+                                                    </connections>
+                                                </stepper>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 hrs" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="YhM-1K-12m">
+                                                    <rect key="frame" x="114" y="11" width="84" height="24"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="17"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -712,6 +728,7 @@
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <navigationItem key="navigationItem" id="GKL-Sf-Pmg"/>
                     <connections>
+                        <outlet property="durationLabel" destination="YhM-1K-12m" id="aPi-Kd-7hJ"/>
                         <segue destination="Vy2-mP-Cbd" kind="push" identifier="next" id="Rlx-Qz-UtQ"/>
                     </connections>
                 </tableViewController>
@@ -792,9 +809,12 @@
                                                     <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="17"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <stepper opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" id="5Jx-8O-LNk">
+                                                <stepper opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="3" minimumValue="1" maximumValue="10000" id="5Jx-8O-LNk">
                                                     <rect key="frame" x="206" y="7" width="94" height="29"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                    <connections>
+                                                        <action selector="minGuestsAction:" destination="Vy2-mP-Cbd" eventType="valueChanged" id="pa5-95-9jd"/>
+                                                    </connections>
                                                 </stepper>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="3" borderStyle="roundedRect" minimumFontSize="17" id="t5K-p2-Fdo">
                                                     <rect key="frame" x="90" y="7" width="63" height="30"/>
@@ -812,9 +832,12 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <stepper opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" id="jkE-Zi-Pd2">
+                                                <stepper opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="10" minimumValue="1" maximumValue="10000" id="jkE-Zi-Pd2">
                                                     <rect key="frame" x="206" y="7" width="94" height="29"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                    <connections>
+                                                        <action selector="maxGuestsAction:" destination="Vy2-mP-Cbd" eventType="valueChanged" id="4bw-KF-Jb5"/>
+                                                    </connections>
                                                 </stepper>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="10" borderStyle="roundedRect" minimumFontSize="17" id="ijg-Zi-Q1U">
                                                     <rect key="frame" x="91" y="7" width="63" height="30"/>
@@ -842,6 +865,8 @@
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <navigationItem key="navigationItem" id="IzR-ly-ra0"/>
                     <connections>
+                        <outlet property="maxTextField" destination="ijg-Zi-Q1U" id="9bt-rd-Zz2"/>
+                        <outlet property="minTextField" destination="t5K-p2-Fdo" id="F3E-Wg-t0S"/>
                         <segue destination="9A5-ar-NE2" kind="push" identifier="next" id="o0z-nC-GgO"/>
                     </connections>
                 </tableViewController>
@@ -857,6 +882,7 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
                         <sections>
                             <tableViewSection id="nwT-vJ-VhV">
                                 <cells>
@@ -879,6 +905,9 @@
                                                         <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="showImagePicker:" destination="M0i-Gr-jf0" eventType="touchUpInside" id="wFF-LD-Z0j"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                         </tableViewCellContentView>
@@ -974,13 +1003,7 @@
                         </connections>
                     </tableView>
                     <extendedEdge key="edgesForExtendedLayout"/>
-                    <navigationItem key="navigationItem" id="5nz-Yk-dis">
-                        <barButtonItem key="rightBarButtonItem" title="Save" id="kXQ-Im-xnR">
-                            <connections>
-                                <action selector="saveButtonTapped:" destination="M0i-Gr-jf0" id="313-qV-cQY"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="5nz-Yk-dis"/>
                     <connections>
                         <segue destination="tAF-RP-EjT" kind="push" identifier="Confirm" id="kQh-jw-IGK"/>
                     </connections>
@@ -989,10 +1012,10 @@
             </objects>
             <point key="canvasLocation" x="1939" y="256"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Experience Confirmation Table View Controller-->
         <scene sceneID="oCE-pG-KBG">
             <objects>
-                <tableViewController id="tAF-RP-EjT" sceneMemberID="viewController">
+                <tableViewController id="tAF-RP-EjT" customClass="ExperienceConfirmationTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="zuS-mZ-1Qd">
                         <rect key="frame" x="0.0" y="64" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1022,6 +1045,16 @@
                                                     </attributedString>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="swW-LY-tBJ">
+                                                    <rect key="frame" x="20" y="135" width="280" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" title="I'm done">
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="doneButtonPressed:" destination="tAF-RP-EjT" eventType="touchUpInside" id="Pjx-ir-KBV"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -1072,10 +1105,10 @@
             </objects>
             <point key="canvasLocation" x="2482" y="570"/>
         </scene>
-        <!--View Controller-->
+        <!--Text Input View Controller-->
         <scene sceneID="njI-EA-03f">
             <objects>
-                <viewController id="iPD-oG-xKs" sceneMemberID="viewController">
+                <viewController id="iPD-oG-xKs" customClass="TextInputViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="FAo-0q-JVd">
                         <rect key="frame" x="0.0" y="64" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1083,18 +1116,18 @@
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Lots of text goes here." id="Xma-BG-5gJ">
                                 <rect key="frame" x="0.0" y="64" width="320" height="132"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="50 characters remaining" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="C4F-zx-adC">
-                                <rect key="frame" x="0.0" y="312" width="202" height="21"/>
+                                <rect key="frame" x="0.0" y="219" width="202" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="vo0-4n-Gqs">
-                                <rect key="frame" x="270" y="312" width="30" height="30"/>
+                                <rect key="frame" x="270" y="219" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="?">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -1105,6 +1138,9 @@
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <navigationItem key="navigationItem" id="rQ2-Qa-wWE"/>
+                    <connections>
+                        <outlet property="textView" destination="Xma-BG-5gJ" id="gTR-CZ-eC6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cvi-jm-WIK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1114,7 +1150,7 @@
         <scene sceneID="n1u-fx-WKM">
             <objects>
                 <tableViewController id="9A5-ar-NE2" customClass="ManaTableViewController" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="none" rowHeight="44" sectionHeaderHeight="1" sectionFooterHeight="1" id="CXv-Ed-LXI">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="none" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="44" sectionHeaderHeight="1" sectionFooterHeight="1" id="CXv-Ed-LXI">
                         <rect key="frame" x="0.0" y="64" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1396,7 +1432,9 @@
                     <navigationItem key="navigationItem" id="Hmc-fF-wE1"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="costTextField" destination="frU-g0-TK4" id="f2Q-xZ-KLw"/>
                         <outlet property="manaCostLabel" destination="D90-Jb-I3o" id="Hmd-1v-d8K"/>
+                        <outlet property="prepTextField" destination="uWB-Fw-0bb" id="dxU-P7-PQe"/>
                         <outlet property="slider" destination="ehy-Uc-GvC" id="DLd-M2-EfC"/>
                         <segue destination="M0i-Gr-jf0" kind="push" identifier="next" id="UJ8-07-W6c"/>
                     </connections>

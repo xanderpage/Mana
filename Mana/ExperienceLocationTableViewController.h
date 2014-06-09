@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <CoreLocation/CoreLocation.h>
+#import "UITableViewController+NextButtonSegue.h"
 
 @interface ExperienceLocationTableViewController : UITableViewController<CLLocationManagerDelegate>
 

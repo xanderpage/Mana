@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface UITableViewController (NextButtonSegue)
-- (void) addNextButton;
+- (void) addNextButtonWithDelegate:(id)delegate;
 - (void) removeNextButton;
 @end

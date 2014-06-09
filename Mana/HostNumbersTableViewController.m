@@ -10,7 +10,8 @@
 #import "UITableViewController+NextButtonSegue.h"
 
 @interface HostNumbersTableViewController ()
-
+@property(nonatomic,weak) IBOutlet UITextField * minTextField;
+@property(nonatomic,weak) IBOutlet UITextField * maxTextField;
 @end
 
 @implementation HostNumbersTableViewController
@@ -38,15 +39,39 @@
 }
 - (void) viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    [self addNextButton];
+    [self addNextButtonWithDelegate:self];
 }
 - (void) viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
     [self removeNextButton];
 }
 
-
-
+- (void) nextButtonTapped:(id)sender{
+    int min= [self.minTextField.text intValue];
+    int max= [self.maxTextField.text intValue];
+    
+    [[ManaExperienceCreator sharedInstance].experience setMinimumGuests:min];
+    [[ManaExperienceCreator sharedInstance].experience setMaximumGuests:max];
+    
+    [self performSegueWithIdentifier:@"next" sender:self];
+}
+- (IBAction)minGuestsAction:(UIStepper*)sender
+{
+    int count = (int) sender.value;
+    self.minTextField.text = [NSString stringWithFormat:@"%d", count];
+}
+- (IBAction)maxGuestsAction:(UIStepper*)sender
+{
+    int count = (int) sender.value;
+    self.maxTextField.text = [NSString stringWithFormat:@"%d", count];
+}
+- (BOOL) tableView:(UITableView *)tableView shouldHighlightRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    [self.minTextField resignFirstResponder];
+    [self.maxTextField resignFirstResponder];
+    
+    return NO;
+}
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];

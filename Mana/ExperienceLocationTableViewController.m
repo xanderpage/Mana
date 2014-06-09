@@ -7,7 +7,6 @@
 //
 
 #import "ExperienceLocationTableViewController.h"
-#import "UITableViewController+NextButtonSegue.h"
 #import <MapKit/MapKit.h>
 
 @interface ExperienceLocationTableViewController ()
@@ -41,13 +40,16 @@
     self.locationManager.delegate = self;
     [self.locationManager startUpdatingLocation];
 
-    [self addNextButton];
+    [self addNextButtonWithDelegate:self];
+}
 
+- (void) nextButtonTapped:(id)sender{
+    [self performSegueWithIdentifier:@"next" sender:self];
 }
 
 - (void) viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    [self addNextButton];
+    [self addNextButtonWithDelegate:self];
 }
 
 - (void) viewWillDisappear:(BOOL)animated{
@@ -57,13 +59,10 @@
 - (void) setMapLocation:(CLLocation*)location{
     NSIndexPath * indexPath = [NSIndexPath indexPathForItem:1 inSection:0];
     UITableViewCell * mapCell = [self.tableView cellForRowAtIndexPath:indexPath];
-
     MKMapView * map = [mapCell viewWithTag:100];
-
     MKCoordinateRegion region = MKCoordinateRegionMake(location.coordinate, MKCoordinateSpanMake(0.5, 0.5));
-    
     [map setRegion:region animated:YES];
-
+    [[ManaExperienceCreator sharedInstance].experience setLocation:location.coordinate];
 }
 
 - (void) locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations{
@@ -79,6 +78,8 @@
        
         CLPlacemark * first = [placemarks firstObject];
         [self setMapLocation:first.location];
+        
+        [[ManaExperienceCreator sharedInstance].experience setLocationLocality:first.locality withAdministrativeArea:first.administrativeArea];
         
     }];
 

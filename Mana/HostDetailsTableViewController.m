@@ -7,6 +7,8 @@
 //
 
 #import "HostDetailsTableViewController.h"
+#import "UITableViewController+NextButtonSegue.h"
+#import "TextInputViewController.h"
 
 @interface HostDetailsTableViewController ()
 
@@ -27,24 +29,68 @@
 {
     [super viewDidLoad];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    
     self.tableView.tableHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, self.tableView.bounds.size.width, 0.01f)];
 }
-
+- (void) viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    [self addNextButtonWithDelegate:self];
+}
+- (void) nextButtonTapped:(id)sender{
+    
+    [self performSegueWithIdentifier:@"Confirm" sender:nil];
+}
+- (void) viewDidDisappear:(BOOL)animated{
+    [super viewDidDisappear:animated];
+    [self removeNextButton];
+}
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+- (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+}
 
-- (IBAction)saveButtonTapped:(id)sender
+- (IBAction)showImagePicker:(id)sender{
+    UIImagePickerController * picker =[[UIImagePickerController alloc] init];
+    picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    picker.delegate = self;
+    [self presentViewController:picker animated:NO completion:nil];
+}
+- (void) imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info{
+    
+    UIImage *img = info[UIImagePickerControllerEditedImage];
+    
+    [[ManaExperienceCreator sharedInstance].experience addImage:img];
+    
+    [picker dismissViewControllerAnimated:YES completion:nil];
+}
+- (void) imagePickerControllerDidCancel:(UIImagePickerController *)picker{
+    [picker dismissViewControllerAnimated:YES completion:nil];
+}
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    [self performSegueWithIdentifier:@"Confirm" sender:nil];
+    NSIndexPath * indexPath = self.tableView.indexPathForSelectedRow;
+    if( [segue.destinationViewController isKindOfClass:[TextInputViewController class]])
+    {
+        TextInputViewController * destination = (TextInputViewController*)segue.destinationViewController;
+        switch (indexPath.row) {
+            case 1:
+                destination.field = @"Title";
+                break;
+            case 2:
+                destination.field = @"Description";
+                break;
+            case 3:
+                destination.field = @"Address";
+                break;
+            default:
+                break;
+        }
+    }
+
+    
+
 }
 
 @end

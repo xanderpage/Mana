@@ -22,5 +22,8 @@
     #import "SDWebImageManager.h"
     #import "UIImageView+WebCache.h"
 
+    #import "Experience.h"
+
     #import "ManaUserManager.h" // user account singleton
+    #import "ManaExperienceCreator.h"
 #endif

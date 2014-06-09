@@ -31,16 +31,21 @@
     [[UINavigationBar appearance] setBackgroundColor:[UIColor whiteColor]];
     [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"navbar"] forBarPosition:UIBarPositionTop barMetrics:UIBarMetricsDefault];
 
-    // Create a reference to a Firebase location
-    Firebase* f = [[Firebase alloc] initWithUrl:@"https://glowing-fire-7751.firebaseio.com/"];
     
-    // Write data to Firebase
-    [f setValue:@"Do you have data? You'll love Firebase."];
-    
-    // Read data and react to changes
-    [f observeEventType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
-        NSLog(@"%@ -> %@", snapshot.name, snapshot.value);
-    }];
+   //
+//    // Create a reference to a Firebase location
+//    Firebase* f = [[Firebase alloc] initWithUrl:@"https://glowing-fire-7751.firebaseio.com/"];
+//    
+//    // Write data to Firebase
+//    [f setValue:@"Do you have data? You'll love Firebase."];
+//    
+//    NSData *imageData = UIImageJPEGRepresentation([UIImage imageNamed:@"email-icon"], 1.0);
+//    [f setValue:@{@"image":[imageData base64Encoding]}];
+//    
+//    // Read data and react to changes
+//    [f observeEventType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
+//        NSLog(@"%@ -> %@", snapshot.name, snapshot.value);
+//    }];
     
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{

@@ -10,7 +10,7 @@
 #import "UITableViewController+NextButtonSegue.h"
 
 @interface HostWhenTableViewController ()
-
+@property(nonatomic,weak) IBOutlet UILabel * durationLabel;
 @end
 
 @implementation HostWhenTableViewController
@@ -38,7 +38,11 @@
 }
 - (void) viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    [self addNextButton];
+    [self addNextButtonWithDelegate:self];
+}
+
+- (void) nextButtonTapped:(id)sender{
+    [self performSegueWithIdentifier:@"next" sender:self];
 }
 
 - (void) viewWillDisappear:(BOOL)animated{
@@ -46,13 +50,28 @@
     [self removeNextButton];
 }
 
-
-
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+- (IBAction)anytimeSwitchAction:(UISwitch*)sender
+{
+    BOOL anytime = sender.on;
+    [[ManaExperienceCreator sharedInstance].experience setAnytime:anytime];
+}
+
+- (IBAction)durationStepperAction:(UIStepper*)sender
+{
+    int count = (int)sender.value;
+    self.durationLabel.text = [NSString stringWithFormat:@"%d hrs",count];
+    
+    [[ManaExperienceCreator sharedInstance].experience setDuration:count];
+}
+
+
+
 
 
 @end

@@ -81,6 +81,11 @@
 		D27D5CF61942151700F2B4BB /* attend2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D27D5CF31942151700F2B4BB /* attend2.jpg */; };
 		D27D5CF71942151700F2B4BB /* attend3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D27D5CF41942151700F2B4BB /* attend3.jpg */; };
 		D27D5CFA19421AA700F2B4BB /* ManaUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D27D5CF919421AA700F2B4BB /* ManaUserViewController.m */; };
+		D27D5D001942B6BC00F2B4BB /* Experience.m in Sources */ = {isa = PBXBuildFile; fileRef = D27D5CFF1942B6BC00F2B4BB /* Experience.m */; };
+		D27D5D031942C08600F2B4BB /* ManaFirebase.m in Sources */ = {isa = PBXBuildFile; fileRef = D27D5D021942C08600F2B4BB /* ManaFirebase.m */; };
+		D27D5D061944412A00F2B4BB /* ManaExperienceCreator.m in Sources */ = {isa = PBXBuildFile; fileRef = D27D5D051944412A00F2B4BB /* ManaExperienceCreator.m */; };
+		D27D5D091945830600F2B4BB /* TextInputViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D27D5D081945830600F2B4BB /* TextInputViewController.m */; };
+		D27D5D0C194586C400F2B4BB /* ExperienceConfirmationTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D27D5D0B194586C400F2B4BB /* ExperienceConfirmationTableViewController.m */; };
 		D299B221192BCD3100A47540 /* ExperienceCategoryTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D299B220192BCD3100A47540 /* ExperienceCategoryTableViewController.m */; };
 		D2BD732A192E8121007B73C5 /* ManaTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2BD7329192E8121007B73C5 /* ManaTableViewController.m */; };
 		D2BD732E192E88D6007B73C5 /* pretty normal looking girl.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D2BD732D192E88D6007B73C5 /* pretty normal looking girl.jpg */; };
@@ -242,6 +247,16 @@
 		D27D5CF41942151700F2B4BB /* attend3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = attend3.jpg; sourceTree = "<group>"; };
 		D27D5CF819421AA700F2B4BB /* ManaUserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ManaUserViewController.h; sourceTree = "<group>"; };
 		D27D5CF919421AA700F2B4BB /* ManaUserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ManaUserViewController.m; sourceTree = "<group>"; };
+		D27D5CFE1942B6BC00F2B4BB /* Experience.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Experience.h; sourceTree = "<group>"; };
+		D27D5CFF1942B6BC00F2B4BB /* Experience.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Experience.m; sourceTree = "<group>"; };
+		D27D5D011942C08600F2B4BB /* ManaFirebase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ManaFirebase.h; sourceTree = "<group>"; };
+		D27D5D021942C08600F2B4BB /* ManaFirebase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ManaFirebase.m; sourceTree = "<group>"; };
+		D27D5D041944412A00F2B4BB /* ManaExperienceCreator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ManaExperienceCreator.h; sourceTree = "<group>"; };
+		D27D5D051944412A00F2B4BB /* ManaExperienceCreator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ManaExperienceCreator.m; sourceTree = "<group>"; };
+		D27D5D071945830600F2B4BB /* TextInputViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextInputViewController.h; sourceTree = "<group>"; };
+		D27D5D081945830600F2B4BB /* TextInputViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextInputViewController.m; sourceTree = "<group>"; };
+		D27D5D0A194586C400F2B4BB /* ExperienceConfirmationTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExperienceConfirmationTableViewController.h; sourceTree = "<group>"; };
+		D27D5D0B194586C400F2B4BB /* ExperienceConfirmationTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExperienceConfirmationTableViewController.m; sourceTree = "<group>"; };
 		D299B21F192BCD3100A47540 /* ExperienceCategoryTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExperienceCategoryTableViewController.h; sourceTree = "<group>"; };
 		D299B220192BCD3100A47540 /* ExperienceCategoryTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExperienceCategoryTableViewController.m; sourceTree = "<group>"; };
 		D2BD7328192E8121007B73C5 /* ManaTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ManaTableViewController.h; sourceTree = "<group>"; };
@@ -463,6 +478,8 @@
 			children = (
 				D2FC8ABB19350653009D372C /* ManaUserManager.h */,
 				D2FC8ABC19350653009D372C /* ManaUserManager.m */,
+				D27D5D041944412A00F2B4BB /* ManaExperienceCreator.h */,
+				D27D5D051944412A00F2B4BB /* ManaExperienceCreator.m */,
 			);
 			name = Managers;
 			sourceTree = "<group>";
@@ -576,6 +593,10 @@
 		D27D5CFB1942645200F2B4BB /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				D27D5CFE1942B6BC00F2B4BB /* Experience.h */,
+				D27D5CFF1942B6BC00F2B4BB /* Experience.m */,
+				D27D5D011942C08600F2B4BB /* ManaFirebase.h */,
+				D27D5D021942C08600F2B4BB /* ManaFirebase.m */,
 			);
 			name = Data;
 			sourceTree = "<group>";
@@ -659,6 +680,10 @@
 				D2432C1A192C253900A87951 /* HostDetailsTableViewController.m */,
 				D2BD7328192E8121007B73C5 /* ManaTableViewController.h */,
 				D2BD7329192E8121007B73C5 /* ManaTableViewController.m */,
+				D27D5D071945830600F2B4BB /* TextInputViewController.h */,
+				D27D5D081945830600F2B4BB /* TextInputViewController.m */,
+				D27D5D0A194586C400F2B4BB /* ExperienceConfirmationTableViewController.h */,
+				D27D5D0B194586C400F2B4BB /* ExperienceConfirmationTableViewController.m */,
 			);
 			name = "Host Creation";
 			sourceTree = "<group>";
@@ -842,6 +867,7 @@
 				D2E16D87192BC7E4008DD0B0 /* ExperienceTypeTableViewController.m in Sources */,
 				D2FC8AEC1935177B009D372C /* NSDate+ShortCuts.m in Sources */,
 				D27D5CE1194152F300F2B4BB /* RECommonFunctions.m in Sources */,
+				D27D5D0C194586C400F2B4BB /* ExperienceConfirmationTableViewController.m in Sources */,
 				D2FC8AE319350B1D009D372C /* SDWebImageManager.m in Sources */,
 				D260041919345EFB003239FE /* NSData+MPBase64.m in Sources */,
 				D260041719345EFB003239FE /* MPSurveyQuestion.m in Sources */,
@@ -863,10 +889,12 @@
 				D26003E319345E5A003239FE /* MMDrawerBarButtonItem.m in Sources */,
 				D2FC8AE119350B1D009D372C /* SDWebImageDownloader.m in Sources */,
 				D2FC8ADD19350B1D009D372C /* NSData+ImageContentType.m in Sources */,
+				D27D5D031942C08600F2B4BB /* ManaFirebase.m in Sources */,
 				D2432C0D192BD11400A87951 /* ExperienceLocationTableViewController.m in Sources */,
 				D260041C19345EFB003239FE /* UIImage+MPImageEffects.m in Sources */,
 				D26003721934506A003239FE /* ContentViewController.m in Sources */,
 				D27D5CE4194152F300F2B4BB /* UIImage+REFrostedViewController.m in Sources */,
+				D27D5D001942B6BC00F2B4BB /* Experience.m in Sources */,
 				D2FC8AE819350B1D009D372C /* UIImage+WebP.m in Sources */,
 				D27D5CE3194152F300F2B4BB /* REFrostedViewController.m in Sources */,
 				D260041319345EFB003239FE /* MPNotificationViewController.m in Sources */,
@@ -881,8 +909,10 @@
 				D2432C15192C24F200A87951 /* HostWhenTableViewController.m in Sources */,
 				D26003E619345E5A003239FE /* UIViewController+MMDrawerController.m in Sources */,
 				D2FC8ABA19350108009D372C /* ManaLoginViewController.m in Sources */,
+				D27D5D091945830600F2B4BB /* TextInputViewController.m in Sources */,
 				D2BD732A192E8121007B73C5 /* ManaTableViewController.m in Sources */,
 				D209D20F1923DA7200BE5F91 /* main.m in Sources */,
+				D27D5D061944412A00F2B4BB /* ManaExperienceCreator.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
