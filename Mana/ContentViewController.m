@@ -40,7 +40,7 @@
     self.viewPager.delegate   = self;
     
     self.menuItems = @[@"Feed", @"Experiences"];
-   
+
 }
 
 

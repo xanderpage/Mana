@@ -38,7 +38,7 @@
     
     self.profilePhotoUrls = [NSMutableArray new];
     self.facebookPhotos   = [NSMutableArray new];
-    [FBRequestConnection startWithGraphPath:@"/me?fields=picture.height(961),cover,albums"
+    [FBRequestConnection startWithGraphPath:@"/me?fields=picture.height(961),cover,albums,likes"
                           completionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
                               if (!error) {
                                   NSLog(@"user events: %@", result);

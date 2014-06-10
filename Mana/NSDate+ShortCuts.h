@@ -14,5 +14,7 @@
 - (NSString*) shortString;
 - (NSString*) monthPart;
 - (NSString*) dayPart;
+- (NSDate*) fromDateString:(NSString*)string;
+- (NSString*) toDateString;
 + (NSInteger) ageFromFacebookBirthday:(NSString*)birthday;
 @end

@@ -22,6 +22,7 @@
 - (void) setCreator;
 - (void) addImage:(UIImage*)image;
 - (void) setCategory:(NSString*)cat;
+- (void) setStartDate:(NSString*)startDate;
 - (void) setStartTime:(NSString*)startTime;
 - (void) setRSVPEndTime:(NSString*)endTime;
 - (void) setDuration:(float) duration;
@@ -32,4 +33,5 @@
 - (void) setTotalManaValue:(float)amount;
 
 @property (nonatomic,strong) Firebase * firebase;
+@property (nonatomic,strong) FDataSnapshot *snapshot;
 @end

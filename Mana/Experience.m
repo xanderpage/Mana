@@ -14,7 +14,7 @@
 + (Experience*) create{
     NSString * resourceUrl = [NSString stringWithFormat:@"%@/%@",[ManaFirebase sharedInstance].baseURLString, @"experiences"];
     
-    Experience * exp = [Experience new];
+    __block Experience * exp = [Experience new];
     exp.firebase = [[[Firebase alloc] initWithUrl:resourceUrl] childByAutoId];
     
     [exp performSelector:@selector(setCreator) withObject:nil afterDelay:0.1];
@@ -79,6 +79,13 @@
     Firebase * location = [self.firebase childByAppendingPath:@"when"];
     [location updateChildValues:@{@"anytime":[NSNumber numberWithBool:anytime]}];
 }
+- (void) setStartDate:(NSString *)startDate
+{
+    Firebase * location = [self.firebase childByAppendingPath:@"when"];
+    [location updateChildValues:@{@"startDate":startDate}];
+    
+}
+
 - (void) setStartTime:(NSString*)startTime
 {
     Firebase * location = [self.firebase childByAppendingPath:@"when"];

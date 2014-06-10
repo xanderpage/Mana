@@ -8,10 +8,15 @@
 
 #import "HostWhenTableViewController.h"
 #import "UITableViewController+NextButtonSegue.h"
+#import "CalendarViewController.h"
+#import "NSDate+ShortCuts.h"
 
 @interface HostWhenTableViewController ()
 @property(nonatomic,weak) IBOutlet UILabel * durationLabel;
+@property (nonatomic,weak) IBOutlet DSLCalendarView *calendarView;
+@property(nonatomic) NSArray * cellIdentifierOrder;
 @end
+
 
 @implementation HostWhenTableViewController
 
@@ -34,7 +39,21 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
+    self.cellIdentifierOrder = @[@"CELL_DESCRIPTION",@"CELL_ANYTIME", @"CELL_DATE", @"CELL_TIME",@"CELL_DURATION",@"CELL_RSVP_END"];
+    
     self.tableView.tableHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, self.tableView.bounds.size.width, 0.01f)];
+    
+    Firebase * fb = [ManaExperienceCreator sharedInstance].experience.firebase;
+    [fb observeEventType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
+        [ManaExperienceCreator sharedInstance].experience.snapshot = snapshot;
+        [self.tableView reloadData];
+    }];
+}
+- (NSInteger) numberOfSectionsInTableView:(UITableView *)tableView{
+    return 1;
+}
+- (NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return self.cellIdentifierOrder.count;
 }
 - (void) viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
@@ -48,6 +67,32 @@
 - (void) viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
     [self removeNextButton];
+}
+
+- (BOOL) tableView:(UITableView *)tableView shouldHighlightRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    if( indexPath.row == 2 ){
+        CalendarViewController * cal = [self.storyboard instantiateViewControllerWithIdentifier:@"Calendar"];
+        
+        [self presentViewController:cal animated:YES completion:nil];
+    }
+    
+    return NO;
+}
+
+- (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    NSString * ident = [self.cellIdentifierOrder objectAtIndex:indexPath.row];
+    UITableViewCell * cell = [self.tableView dequeueReusableCellWithIdentifier:ident forIndexPath:indexPath];
+    
+    if (indexPath.row == 2 ) {
+        NSDictionary * ob = [ManaExperienceCreator sharedInstance].experience.snapshot.value;
+        NSDictionary * when = ob[@"when"];
+        NSString * sd = when[@"startDate"];
+        NSLog(@"%@", sd);
+        cell.textLabel.text = sd;
+    }
+    return cell;
 }
 
 - (void)didReceiveMemoryWarning
@@ -70,7 +115,13 @@
     [[ManaExperienceCreator sharedInstance].experience setDuration:count];
 }
 
-
+- (CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    if( indexPath.row == 0 ){
+        return 100.;
+    }
+    return 50.;
+}
 
 
 

@@ -30,7 +30,6 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(setRootView:) name:@"GotoHost" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(setRootView:) name:@"GotoFeed" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(setRootView:) name:@"GotoManageExperiences" object:nil];
-
 }
 
 

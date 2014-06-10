@@ -53,6 +53,22 @@
 
 }
 
+- (NSString*) toDateString {
+    NSDateFormatter *inFormat = [[NSDateFormatter alloc] init];
+    [inFormat setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:0]];
+    
+    //    [inFormat setDateFormat:@"MMM dd, HH:mm a"];
+    [inFormat setDateFormat:@"MMM dd yyyy"];
+    return [inFormat stringFromDate: self];
+    
+}
+- (NSDate*) fromDateString:(NSString*)string {
+    NSDateFormatter *inFormat = [[NSDateFormatter alloc] init];
+    [inFormat setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:0]];
+    //    [inFormat setDateFormat:@"MMM dd, HH:mm a"];
+    [inFormat setDateFormat:@"MMM dd yyyy"];
+    return [inFormat dateFromString:string];
+}
 - (NSString*) dayPart{
     NSCalendar *calendar = [NSCalendar currentCalendar];
     NSDateComponents * comps = [calendar components:(NSDayCalendarUnit | NSMonthCalendarUnit) fromDate:self];

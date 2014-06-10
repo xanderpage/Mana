@@ -74,6 +74,10 @@
 //    frostedViewController.liveBlurBackgroundStyle = REFrostedViewControllerLiveBackgroundStyleLight;
 //    frostedViewController.blurRadius           = 3;
 //    frostedViewController.backgroundFadeAmount = 0.6;
+
+//    Uncomment this to make the calendar view background transparent
+//    frostedViewController.modalPresentationStyle = UIModalPresentationCurrentContext;
+
     [self.window setRootViewController:frostedViewController];
    
 }
