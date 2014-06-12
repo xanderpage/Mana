@@ -22,15 +22,15 @@
 - (void) setCreator;
 - (void) addImage:(UIImage*)image;
 - (void) setCategory:(NSString*)cat;
-- (void) setStartDate:(NSString*)startDate;
-- (void) setStartTime:(NSString*)startTime;
-- (void) setRSVPEndTime:(NSString*)endTime;
+- (void) setStartDateTime:(NSDate*)date;
+- (void) setRSVPEndSeconds:(NSNumber*) secondsBefore;
 - (void) setDuration:(float) duration;
 - (void) setMinimumGuests:(int) guests;
 - (void) setMaximumGuests:(int) guests;
 - (void) setCost:(float) cost;
 - (void) setPrepTime:(float)hrs;
 - (void) setTotalManaValue:(float)amount;
+- (void) setPublished:(BOOL) published;
 
 @property (nonatomic,strong) Firebase * firebase;
 @property (nonatomic,strong) FDataSnapshot *snapshot;

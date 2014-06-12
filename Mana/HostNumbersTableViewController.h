@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface HostNumbersTableViewController : UITableViewController
+@interface HostNumbersTableViewController : UITableViewController<UIPickerViewDataSource,UIPickerViewDelegate>
+
 
 @end

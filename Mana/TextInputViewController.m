@@ -9,6 +9,9 @@
 #import "TextInputViewController.h"
 @interface TextInputViewController ()
 @property(nonatomic) IBOutlet UITextView * textView;
+@property(nonatomic) IBOutlet UILabel * titleLabel;
+@property(nonatomic) IBOutlet UILabel * charactersRemainingLabel;
+@property(nonatomic) NSNumber * characterLimit;
 @end
 
 @implementation TextInputViewController
@@ -25,7 +28,56 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+   
+}
+
+- (void) viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    
+    
+    Firebase * fb = [ManaExperienceCreator sharedInstance].experience.firebase;
+    [fb observeEventType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
+        [ManaExperienceCreator sharedInstance].experience.snapshot = snapshot;
+        [self.textView becomeFirstResponder];
+        
+        if( [self.field isEqualToString:@"Address"] ){
+            self.titleLabel.text = @"Address & Directions";
+            self.characterLimit = [NSNumber numberWithInt:100];
+            self.textView.text = snapshot.value[@"address"];
+        }
+        
+        if( [self.field isEqualToString:@"Description"] ){
+            self.titleLabel.text = @"Describe Your Experience";
+            self.characterLimit = [NSNumber numberWithInt:100];
+            self.textView.text = snapshot.value[@"description"];
+            
+        }
+        
+        if( [self.field isEqualToString:@"Title"] ){
+            self.titleLabel.text = @"Title For Your Experience";
+            self.characterLimit = [NSNumber numberWithInt:100];
+            self.textView.text = snapshot.value[@"title"];
+            
+        }
+        
+        int rem = self.characterLimit.intValue - self.textView.text.length;
+        
+        self.charactersRemainingLabel.text = [NSString stringWithFormat:@"%d characters remaining", rem];
+    }];
+}
+- (IBAction)helpButtonTapped:(id)sender{
+    NSLog(@"Tappity tap");
+}
+- (BOOL) textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text{
+    if( [text isEqualToString:@""] ) return YES;
+    NSInteger length = textView.text.length;
+    NSInteger rem  = self.characterLimit.intValue - length;
+    return rem > 0;
+}
+- (void) textViewDidChange:(UITextView *)textView{
+    NSInteger length = textView.text.length;
+    NSInteger rem  = self.characterLimit.intValue - length;
+    self.charactersRemainingLabel.text = [NSString stringWithFormat:@"%ld characters remaining", rem];
 }
 - (void) viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];

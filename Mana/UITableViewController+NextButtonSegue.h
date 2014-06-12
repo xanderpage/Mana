@@ -10,5 +10,7 @@
 
 @interface UITableViewController (NextButtonSegue)
 - (void) addNextButtonWithDelegate:(id)delegate;
+- (void) addNextButtonWithTitle:(NSString*)title andDelegate:(id)delegate;
+
 - (void) removeNextButton;
 @end

@@ -11,6 +11,7 @@
 
 @interface FeedViewController ()
 @property(nonatomic) IBOutlet UIScrollView * scrollView;
+@property(nonatomic) ExperienceList * experienceDataSource;
 @end
 
 @implementation FeedViewController
@@ -33,6 +34,8 @@
     
     self.scrollView.contentSize = CGSizeMake(self.view.frame.size.width, 630);
     self.scrollView.contentOffset = CGPointMake(0, 200);
+    
+    self.experienceDataSource = [[ExperienceList alloc] init];
 }
 
 - (void) viewDidAppear:(BOOL)animated{

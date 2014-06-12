@@ -62,7 +62,19 @@
     return [inFormat stringFromDate: self];
     
 }
-- (NSDate*) fromDateString:(NSString*)string {
+- (NSString*) toISOString {
+    NSDateFormatter *format = [[NSDateFormatter alloc] init];
+    [format setCalendar:[NSCalendar currentCalendar]];
+    [format setDateFormat:@"yyyy-MM-dd'T'HH:mm:ssZZZZZ"];
+    return [format stringFromDate:self];
+}
++ (NSDate*) fromISOString:(NSString*)iso{
+    NSDateFormatter *format = [[NSDateFormatter alloc] init];
+    [format setCalendar:[NSCalendar currentCalendar]];
+    [format setDateFormat:@"yyyy-MM-dd'T'HH:mm:ssZZZZZ"];
+    return [format dateFromString:iso];
+}
++ (NSDate*) fromDateString:(NSString*)string {
     NSDateFormatter *inFormat = [[NSDateFormatter alloc] init];
     [inFormat setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:0]];
     //    [inFormat setDateFormat:@"MMM dd, HH:mm a"];

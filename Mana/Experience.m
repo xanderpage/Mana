@@ -8,6 +8,7 @@
 
 #import "Experience.h"
 #import "ManaFirebase.h"
+#import "NSDate+ShortCuts.h"
 
 @implementation Experience
 
@@ -16,6 +17,7 @@
     
     __block Experience * exp = [Experience new];
     exp.firebase = [[[Firebase alloc] initWithUrl:resourceUrl] childByAutoId];
+    [exp setPublished:NO];
     
     [exp performSelector:@selector(setCreator) withObject:nil afterDelay:0.1];
     return exp;
@@ -27,13 +29,21 @@
     NSString * fbid = [ManaUserManager sharedInstance].facebookUser[@"id"];
     [creator setValue:@{@"fbid": fbid}];
 }
-
+- (void) setPublished:(BOOL) published{
+    [self.firebase updateChildValues:@{@"published": [NSNumber numberWithBool:published]}];
+}
 - (void) addImage:(UIImage*)image
 {
     Firebase * images = [self.firebase childByAppendingPath:@"images"];
     Firebase * child = [images childByAutoId];
     NSData *imageData = UIImageJPEGRepresentation(image, 1.0);
     [child setValue:@{@"image":[imageData base64Encoding],@"width":[NSNumber numberWithInt:image.size.width], @"height":[NSNumber numberWithInt:image.size.height]}];
+}
+- (NSString*)title
+{
+    if( !self.snapshot ) return @"";
+    if( !self.snapshot.value[@"title"] ) return @"";
+    return self.snapshot.value[@"title"];
 }
 - (void) setTitle:(NSString*)title
 {
@@ -79,22 +89,17 @@
     Firebase * location = [self.firebase childByAppendingPath:@"when"];
     [location updateChildValues:@{@"anytime":[NSNumber numberWithBool:anytime]}];
 }
-- (void) setStartDate:(NSString *)startDate
+- (void) setStartDateTime:(NSDate*)date
 {
     Firebase * location = [self.firebase childByAppendingPath:@"when"];
-    [location updateChildValues:@{@"startDate":startDate}];
-    
+    NSString * dateString = [date toISOString];
+    [location updateChildValues:@{@"starts":dateString}];
 }
 
-- (void) setStartTime:(NSString*)startTime
+- (void) setRSVPEndSeconds:(NSNumber*) secondsBefore
 {
-    Firebase * location = [self.firebase childByAppendingPath:@"when"];
-    [location updateChildValues:@{@"startTime":startTime}];
-}
-- (void) setRSVPEndTime:(NSString*)endTime
-{
-    Firebase * location = [self.firebase childByAppendingPath:@"when"];
-    [location updateChildValues:@{@"rsvpEndTime":endTime}];
+    Firebase * location = [self.firebase childByAppendingPath:@"guests"];
+    [location updateChildValues:@{@"rsvpSeconds":secondsBefore}];
 }
 - (void) setDuration:(float) duration
 {

@@ -9,6 +9,12 @@
 #import <UIKit/UIKit.h>
 #import "DSLCalendarView.h"
 
-@interface CalendarViewController : UIViewController
+typedef enum {
+    UPDATE_FIELD_START_DATE,
+    UPDATE_FIELD_RSVP_END_DATE
+} UPDATE_FIELD;
 
+
+@interface CalendarViewController : UIViewController
+@property(nonatomic,assign) UPDATE_FIELD updateField;
 @end

@@ -11,6 +11,7 @@
 
 @interface ExperienceLocationTableViewController ()
 @property(nonatomic) CLLocationManager * locationManager;
+@property(nonatomic,weak) IBOutlet UITextField * locationNameField;
 @end
 
 @implementation ExperienceLocationTableViewController
@@ -69,6 +70,18 @@
     CLLocation * location = [locations firstObject];
     [self setMapLocation:location];
     [self.locationManager stopUpdatingLocation];
+    
+    CLGeocoder * geo = [[CLGeocoder alloc] init];
+    [geo reverseGeocodeLocation:location completionHandler:^(NSArray *placemarks, NSError *error) {
+        CLPlacemark * first = [placemarks firstObject];
+        [self setLocationField:first];
+        
+        [[ManaExperienceCreator sharedInstance].experience setLocationLocality:first.locality withAdministrativeArea:first.administrativeArea];
+    }];
+}
+- (void) setLocationField:(CLPlacemark*)loc{
+    NSString * name = [NSString stringWithFormat:@"%@, %@", loc.locality, loc.administrativeArea];
+    self.locationNameField.text = name;
 }
 - (IBAction)doneEnteringLocation:(id)sender{
 

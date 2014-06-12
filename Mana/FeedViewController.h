@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ExperienceList.h"
 
 @interface FeedViewController : UIViewController
 

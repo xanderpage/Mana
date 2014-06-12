@@ -33,10 +33,11 @@
 }
 - (void) viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
-    [self addNextButtonWithDelegate:self];
+    [self addNextButtonWithTitle:@"Publish Experience" andDelegate:self];
 }
 - (void) nextButtonTapped:(id)sender{
     
+    [[ManaExperienceCreator sharedInstance].experience setPublished:YES];
     [self performSegueWithIdentifier:@"Confirm" sender:nil];
 }
 - (void) viewDidDisappear:(BOOL)animated{

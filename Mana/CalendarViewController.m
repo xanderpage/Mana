@@ -47,7 +47,13 @@
     NSDate * starts = [[NSCalendar currentCalendar] dateFromComponents:range.startDay];
 
     NSString * string = [starts toDateString];
-    [[ManaExperienceCreator sharedInstance].experience setStartDate:string];
+    
+//    if( self.updateField == UPDATE_FIELD_START_DATE ){
+//        [[ManaExperienceCreator sharedInstance].experience setStartDate:string];
+//    }
+//    else if( self.updateField == UPDATE_FIELD_RSVP_END_DATE ){
+//        [[ManaExperienceCreator sharedInstance].experience setRSVPEndDate:string];
+//    }
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 

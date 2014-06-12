@@ -9,11 +9,10 @@
 #import "HostWhenTableViewController.h"
 #import "UITableViewController+NextButtonSegue.h"
 #import "CalendarViewController.h"
+#import "TimePickerViewController.h"
 #import "NSDate+ShortCuts.h"
 
 @interface HostWhenTableViewController ()
-@property(nonatomic,weak) IBOutlet UILabel * durationLabel;
-@property (nonatomic,weak) IBOutlet DSLCalendarView *calendarView;
 @property(nonatomic) NSArray * cellIdentifierOrder;
 @end
 
@@ -39,8 +38,7 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
-    self.cellIdentifierOrder = @[@"CELL_DESCRIPTION",@"CELL_ANYTIME", @"CELL_DATE", @"CELL_TIME",@"CELL_DURATION",@"CELL_RSVP_END"];
-    
+    self.cellIdentifierOrder = @[@"CELL_DESCRIPTION",@"CELL_ANYTIME", @"CELL_DURATION", @"CELL_DATE"];
     self.tableView.tableHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, self.tableView.bounds.size.width, 0.01f)];
     
     Firebase * fb = [ManaExperienceCreator sharedInstance].experience.firebase;
@@ -60,9 +58,7 @@
     [self addNextButtonWithDelegate:self];
 }
 
-- (void) nextButtonTapped:(id)sender{
-    [self performSegueWithIdentifier:@"next" sender:self];
-}
+
 
 - (void) viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
@@ -70,28 +66,37 @@
 }
 
 - (BOOL) tableView:(UITableView *)tableView shouldHighlightRowAtIndexPath:(NSIndexPath *)indexPath{
-    
-    if( indexPath.row == 2 ){
-        CalendarViewController * cal = [self.storyboard instantiateViewControllerWithIdentifier:@"Calendar"];
-        
-        [self presentViewController:cal animated:YES completion:nil];
-    }
-    
     return NO;
 }
 
+- (void) nextButtonTapped:(id)sender{
+    
+    UITableViewCell * cell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:3 inSection:0]];
+    UIDatePicker * picker = (UIDatePicker*)[cell viewWithTag:200];
+
+    [[ManaExperienceCreator sharedInstance].experience setStartDateTime:picker.date];
+    
+    [self performSegueWithIdentifier:@"next" sender:self];
+}
 - (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
     NSString * ident = [self.cellIdentifierOrder objectAtIndex:indexPath.row];
     UITableViewCell * cell = [self.tableView dequeueReusableCellWithIdentifier:ident forIndexPath:indexPath];
     
-    if (indexPath.row == 2 ) {
+    if (indexPath.row == 3 ) {
         NSDictionary * ob = [ManaExperienceCreator sharedInstance].experience.snapshot.value;
         NSDictionary * when = ob[@"when"];
-        NSString * sd = when[@"startDate"];
-        NSLog(@"%@", sd);
-        cell.textLabel.text = sd;
+        NSString * sd = when[@"starts"];
+        UIDatePicker * picker = (UIDatePicker*)[cell viewWithTag:200];
+        picker.minimumDate = [NSDate date];
+        picker.maximumDate = [NSDate dateWithTimeIntervalSinceNow:60*24*60*60];
+        
+        NSLog(@"Start Date: %@", sd);
+        if( sd ){
+            picker.date = [NSDate fromISOString:sd];
+        }
     }
+    
     return cell;
 }
 
@@ -105,12 +110,35 @@
 {
     BOOL anytime = sender.on;
     [[ManaExperienceCreator sharedInstance].experience setAnytime:anytime];
+    
+    if( anytime ){
+        self.cellIdentifierOrder = @[@"CELL_DESCRIPTION",@"CELL_ANYTIME"];
+        [self.tableView deleteRowsAtIndexPaths:@[
+                                                 [NSIndexPath indexPathForRow:2 inSection:0],
+                                                 [NSIndexPath indexPathForRow:3 inSection:0],
+                                                 [NSIndexPath indexPathForRow:4 inSection:0]]
+        
+                              withRowAnimation:UITableViewRowAnimationFade];
+
+    }
+    else{
+        self.cellIdentifierOrder = @[@"CELL_DESCRIPTION",@"CELL_ANYTIME", @"CELL_DATE",@"CELL_DURATION",@"CELL_RSVP_END"];
+        [self.tableView insertRowsAtIndexPaths:@[
+                                                 [NSIndexPath indexPathForRow:2 inSection:0],
+                                                 [NSIndexPath indexPathForRow:3 inSection:0],
+                                                 [NSIndexPath indexPathForRow:4 inSection:0]]
+         
+                              withRowAnimation:UITableViewRowAnimationFade];
+
+    }
 }
 
 - (IBAction)durationStepperAction:(UIStepper*)sender
 {
     int count = (int)sender.value;
-    self.durationLabel.text = [NSString stringWithFormat:@"%d hrs",count];
+    UITableViewCell * durationCell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:2 inSection:0]];
+    UITextField * label = [durationCell viewWithTag:100];
+    label.text = [NSString stringWithFormat:@"%d hrs",count];
     
     [[ManaExperienceCreator sharedInstance].experience setDuration:count];
 }
@@ -119,6 +147,9 @@
     
     if( indexPath.row == 0 ){
         return 100.;
+    }
+    if( indexPath.row == 3 ){
+        return 200.;
     }
     return 50.;
 }

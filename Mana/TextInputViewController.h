@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TextInputViewController : UIViewController
+@interface TextInputViewController : UIViewController<UITextViewDelegate>
 @property(nonatomic) NSString * field;
+
 @end
