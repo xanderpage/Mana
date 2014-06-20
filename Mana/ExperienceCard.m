@@ -9,11 +9,12 @@
 #import "ExperienceCard.h"
 #import "UIImageView+WebCache.h"
 #import "NSDate+ShortCuts.h"
+#import "ManaView.h"
 
 @interface ExperienceCard ()
 @property(nonatomic,weak) IBOutlet UILabel * titleLabel;
 @property(nonatomic,weak) IBOutlet UILabel * descriptionLabel;
-@property(nonatomic,weak) IBOutlet UILabel * manaCostLabel;
+@property(nonatomic,weak) IBOutlet ManaView * manaView;
 @property(nonatomic,weak) IBOutlet UILabel * locationLabel;
 @property(nonatomic,weak) IBOutlet UILabel * dayLabel;
 @property(nonatomic,weak) IBOutlet UILabel * timeLabel;
@@ -46,9 +47,19 @@
 {
     self.experience = experience;
     self.titleLabel.text = experience.title;
-    self.experienceImageView.image = experience.image;
+    if( [self.titleLabel.text isEqualToString:@""] ){
+        self.titleLabel.text = @"Experience the soothing purr of a furry kitten at your local animal rescue!";
+    }
+    
+    if( experience.image ){
+        self.experienceImageView.image = experience.image;
+    }
+    else{
+        [self.experienceImageView setImageWithURL:[NSURL URLWithString:@"http://placekitten.com/640/306"]];
+    }
+    
     self.locationLabel.text = experience.location;
-    self.manaCostLabel.text = experience.manaCost;
+    [self.manaView setManaValue:experience.manaCost];
     
     if( experience.isAnytime ){
         self.timeLabel.hidden = YES;

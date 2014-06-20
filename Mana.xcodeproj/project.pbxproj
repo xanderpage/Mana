@@ -118,6 +118,8 @@
 		D2ADDB241950DEA100178755 /* StarRatingView.m in Sources */ = {isa = PBXBuildFile; fileRef = D2ADDB231950DEA100178755 /* StarRatingView.m */; };
 		D2ADDB271951151500178755 /* UIImage+Resize.m in Sources */ = {isa = PBXBuildFile; fileRef = D2ADDB261951151500178755 /* UIImage+Resize.m */; };
 		D2ADDB2A1951158300178755 /* UIImage+Alpha.m in Sources */ = {isa = PBXBuildFile; fileRef = D2ADDB291951158300178755 /* UIImage+Alpha.m */; };
+		D2ADDB2C1954988B00178755 /* ManaView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2ADDB2B1954988B00178755 /* ManaView.xib */; };
+		D2ADDB30195498A100178755 /* ManaView.m in Sources */ = {isa = PBXBuildFile; fileRef = D2ADDB2F195498A100178755 /* ManaView.m */; };
 		D2BD732A192E8121007B73C5 /* ManaTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2BD7329192E8121007B73C5 /* ManaTableViewController.m */; };
 		D2BD732E192E88D6007B73C5 /* pretty normal looking girl.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D2BD732D192E88D6007B73C5 /* pretty normal looking girl.jpg */; };
 		D2BD7332192EB921007B73C5 /* photo-background.png in Resources */ = {isa = PBXBuildFile; fileRef = D2BD7331192EB921007B73C5 /* photo-background.png */; };
@@ -339,6 +341,9 @@
 		D2ADDB261951151500178755 /* UIImage+Resize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Resize.m"; sourceTree = "<group>"; };
 		D2ADDB281951158300178755 /* UIImage+Alpha.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Alpha.h"; sourceTree = "<group>"; };
 		D2ADDB291951158300178755 /* UIImage+Alpha.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Alpha.m"; sourceTree = "<group>"; };
+		D2ADDB2B1954988B00178755 /* ManaView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ManaView.xib; sourceTree = "<group>"; };
+		D2ADDB2E195498A100178755 /* ManaView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ManaView.h; sourceTree = "<group>"; };
+		D2ADDB2F195498A100178755 /* ManaView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ManaView.m; sourceTree = "<group>"; };
 		D2BD7328192E8121007B73C5 /* ManaTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ManaTableViewController.h; sourceTree = "<group>"; };
 		D2BD7329192E8121007B73C5 /* ManaTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ManaTableViewController.m; sourceTree = "<group>"; };
 		D2BD732D192E88D6007B73C5 /* pretty normal looking girl.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "pretty normal looking girl.jpg"; sourceTree = "<group>"; };
@@ -775,6 +780,7 @@
 				D25C5BCB19391870000FD09C /* Managers */,
 				D284446C19403F8F00630BA1 /* Experiences */,
 				D2ADDB211950DE8B00178755 /* StarRatingView */,
+				D2ADDB2D1954989200178755 /* ManaView */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -822,6 +828,16 @@
 				D2ADDB231950DEA100178755 /* StarRatingView.m */,
 			);
 			name = StarRatingView;
+			sourceTree = "<group>";
+		};
+		D2ADDB2D1954989200178755 /* ManaView */ = {
+			isa = PBXGroup;
+			children = (
+				D2ADDB2B1954988B00178755 /* ManaView.xib */,
+				D2ADDB2E195498A100178755 /* ManaView.h */,
+				D2ADDB2F195498A100178755 /* ManaView.m */,
+			);
+			name = ManaView;
 			sourceTree = "<group>";
 		};
 		D2E16D84192BC7B8008DD0B0 /* Host Creation */ = {
@@ -1001,6 +1017,7 @@
 				D245B5DB1946795600D8EEBF /* DSLCalendarDayCalloutView.xib in Resources */,
 				D24E304C1937B50D002DA64F /* girl-alt2.png in Resources */,
 				D209D23D1923DAD500BE5F91 /* GoldenGateBridge-001.jpg in Resources */,
+				D2ADDB2C1954988B00178755 /* ManaView.xib in Resources */,
 				D25C5BD019391A1F000FD09C /* image2.jpg in Resources */,
 				D245B5DE1946795600D8EEBF /* DSLCalendarMonthSelectorView.xib in Resources */,
 				D245B5E51946795600D8EEBF /* DSLCalendar-previousMonth@2x.png in Resources */,
@@ -1034,6 +1051,7 @@
 				D2432C1B192C253900A87951 /* HostDetailsTableViewController.m in Sources */,
 				D2FC8AAB19346213009D372C /* ManaProfileViewController.m in Sources */,
 				D2ADDB2A1951158300178755 /* UIImage+Alpha.m in Sources */,
+				D2ADDB30195498A100178755 /* ManaView.m in Sources */,
 				D260041119345EFB003239FE /* MPNotification.m in Sources */,
 				D245B5DF1946795600D8EEBF /* DSLCalendarMonthView.m in Sources */,
 				D2ADDB1B1950CE0D00178755 /* User.m in Sources */,

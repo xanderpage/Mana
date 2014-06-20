@@ -45,7 +45,7 @@
 - (UIImage*) image
 {
     NSDictionary * imageDict = self.snapshot[@"image"];
-    if( !imageDict ) return [[UIImage alloc] init];
+    if( !imageDict ) return nil;
     NSString * b64 = imageDict[@"image"];
     NSData *decodedData = [[NSData alloc] initWithBase64EncodedString:b64 options:0];
     UIImage * image = [UIImage imageWithData:decodedData];
@@ -63,15 +63,15 @@
     NSString * s = [self child:@"when" fieldByName:@"anytime"];
     return [s boolValue];
 }
-- (NSString*) manaCost
+- (NSNumber*) manaCost
 {
-    if( !self.snapshot ) return @"";
+    if( !self.snapshot ) return [NSNumber numberWithInt:0];
     
     NSDictionary * dic = self.snapshot[@"mana"];
-    if( !dic ) return @"";
+    if( !dic ) return [NSNumber numberWithInt:0];
     
     NSNumber * val = dic[@"total"];
-    return [NSString stringWithFormat:@"%d", val.intValue];
+    return val;
 }
 - (NSString*)creator
 {

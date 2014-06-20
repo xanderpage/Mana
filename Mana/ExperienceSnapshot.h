@@ -16,7 +16,7 @@
 - (NSString*)description;
 - (UIImage*)image;
 - (NSString*) location;
-- (NSString*) manaCost;
+- (NSNumber*) manaCost;
 - (NSString*) creator;
 - (NSDate*) startDateTime;
 - (BOOL) isAnytime;
