@@ -40,12 +40,6 @@
     
     self.cellIdentifierOrder = @[@"CELL_DESCRIPTION",@"CELL_ANYTIME", @"CELL_DURATION", @"CELL_DATE"];
     self.tableView.tableHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, self.tableView.bounds.size.width, 0.01f)];
-    
-    Firebase * fb = [ManaExperienceCreator sharedInstance].experience.firebase;
-    [fb observeEventType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
-        [ManaExperienceCreator sharedInstance].experience.snapshot = snapshot;
-        [self.tableView reloadData];
-    }];
 }
 - (NSInteger) numberOfSectionsInTableView:(UITableView *)tableView{
     return 1;
@@ -84,7 +78,7 @@
     UITableViewCell * cell = [self.tableView dequeueReusableCellWithIdentifier:ident forIndexPath:indexPath];
     
     if (indexPath.row == 3 ) {
-        NSDictionary * ob = [ManaExperienceCreator sharedInstance].experience.snapshot.value;
+        NSDictionary * ob = [ManaExperienceCreator sharedInstance].experience.data;
         NSDictionary * when = ob[@"when"];
         NSString * sd = when[@"starts"];
         UIDatePicker * picker = (UIDatePicker*)[cell viewWithTag:200];
@@ -115,9 +109,8 @@
         self.cellIdentifierOrder = @[@"CELL_DESCRIPTION",@"CELL_ANYTIME"];
         [self.tableView deleteRowsAtIndexPaths:@[
                                                  [NSIndexPath indexPathForRow:2 inSection:0],
-                                                 [NSIndexPath indexPathForRow:3 inSection:0],
-                                                 [NSIndexPath indexPathForRow:4 inSection:0]]
-        
+                                                 [NSIndexPath indexPathForRow:3 inSection:0]
+        ]
                               withRowAnimation:UITableViewRowAnimationFade];
 
     }
@@ -125,9 +118,8 @@
         self.cellIdentifierOrder = @[@"CELL_DESCRIPTION",@"CELL_ANYTIME", @"CELL_DATE",@"CELL_DURATION",@"CELL_RSVP_END"];
         [self.tableView insertRowsAtIndexPaths:@[
                                                  [NSIndexPath indexPathForRow:2 inSection:0],
-                                                 [NSIndexPath indexPathForRow:3 inSection:0],
-                                                 [NSIndexPath indexPathForRow:4 inSection:0]]
-         
+                                                 [NSIndexPath indexPathForRow:3 inSection:0]
+         ]
                               withRowAnimation:UITableViewRowAnimationFade];
 
     }

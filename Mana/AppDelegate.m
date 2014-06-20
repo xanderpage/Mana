@@ -12,6 +12,7 @@
 #import "ContentViewController.h"
 #import "ManaNavigationViewController.h"
 #import "REFrostedViewController.h"
+#import "User.h"
 
 @implementation AppDelegate
 
@@ -62,6 +63,8 @@
 - (void) loggedIn:(NSNotification*)note{
     if( [self.window.rootViewController isKindOfClass:[REFrostedViewController class]] ) return;
 
+    // this will either cache or create the current user
+    [User createMe];
     
     ManaNavigationViewController * nav = (ManaNavigationViewController*)[[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"RootNavigation"];
     
@@ -71,6 +74,7 @@
     frostedViewController.direction = REFrostedViewControllerDirectionLeft;
     frostedViewController.panGestureEnabled = NO;
     frostedViewController.liveBlur             = YES;
+    frostedViewController.animationDuration     = 0.1;
 //    frostedViewController.liveBlurBackgroundStyle = REFrostedViewControllerLiveBackgroundStyleLight;
 //    frostedViewController.blurRadius           = 3;
 //    frostedViewController.backgroundFadeAmount = 0.6;

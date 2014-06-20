@@ -11,124 +11,215 @@
 #import "NSDate+ShortCuts.h"
 
 @implementation Experience
-
-+ (Experience*) create{
+- (id) init
+{
+    self = [super init];
+    if( self ){
+        self.data = [NSMutableDictionary new];
+        [self setCreator];
+    }
+    return self;
+}
++ (void) createWithDictionary:(NSDictionary *)data{
     NSString * resourceUrl = [NSString stringWithFormat:@"%@/%@",[ManaFirebase sharedInstance].baseURLString, @"experiences"];
     
     __block Experience * exp = [Experience new];
-    exp.firebase = [[[Firebase alloc] initWithUrl:resourceUrl] childByAutoId];
-    [exp setPublished:NO];
-    
-    [exp performSelector:@selector(setCreator) withObject:nil afterDelay:0.1];
-    return exp;
+
+    Firebase * fb = [[[Firebase alloc] initWithUrl:resourceUrl] childByAutoId];
+    [fb setValue:data];
 }
 
 - (void) setCreator
 {
-    Firebase * creator = [self.firebase childByAppendingPath:@"created_by"];
-    NSString * fbid = [ManaUserManager sharedInstance].facebookUser[@"id"];
-    [creator setValue:@{@"fbid": fbid}];
+    NSString * fbid = [ManaUserManager sharedInstance].facebookUser.id;
+    NSDictionary * created_by = @{@"fbid": fbid};
+    self.data[@"created_by"] = created_by;
+    self.data[@"created_at"] = [[NSDate date] toISOString];
 }
-- (void) setPublished:(BOOL) published{
-    [self.firebase updateChildValues:@{@"published": [NSNumber numberWithBool:published]}];
-}
+
 - (void) addImage:(UIImage*)image
 {
-    Firebase * images = [self.firebase childByAppendingPath:@"images"];
-    Firebase * child = [images childByAutoId];
     NSData *imageData = UIImageJPEGRepresentation(image, 1.0);
-    [child setValue:@{@"image":[imageData base64Encoding],@"width":[NSNumber numberWithInt:image.size.width], @"height":[NSNumber numberWithInt:image.size.height]}];
+    self.data[@"image"] = @{@"image":[imageData base64Encoding],@"width":[NSNumber numberWithInt:image.size.width], @"height":[NSNumber numberWithInt:image.size.height]};
 }
 - (NSString*)title
 {
-    if( !self.snapshot ) return @"";
-    if( !self.snapshot.value[@"title"] ) return @"";
-    return self.snapshot.value[@"title"];
+    NSString * title = self.data[@"title"];
+    return title ? title : @"";
 }
 - (void) setTitle:(NSString*)title
 {
-    [self.firebase updateChildValues:@{@"title":title}];
+    self.data[@"title"] = title;
+}
+- (NSString*) address
+{
+    NSString * address = self.data[@"address"];
+    return address ? address : @"";
 }
 - (void) setAddress:(NSString*)address
 {
-    [self.firebase updateChildValues:@{@"address":address}];
+    self.data[@"address"] = address;
 }
 - (void) setCategory:(NSString*)cat
 {
-    [self.firebase updateChildValues:@{@"category":cat}];
+    self.data[@"category"] = cat;
 }
-- (void) setLocation:(CLLocationCoordinate2D)coordinates withName:(NSString*)name
-{
-    Firebase * location = [self.firebase childByAppendingPath:@"location"];
-    [location updateChildValues:@{@"name":name}];
-    [location updateChildValues:@{@"latitude":[NSNumber numberWithDouble:coordinates.latitude]}];
-    [location updateChildValues:@{@"longitude":[NSNumber numberWithDouble:coordinates.longitude]}];
-}
+
 - (void) setLocation:(CLLocationCoordinate2D)coordinates
 {
-    Firebase * location = [self.firebase childByAppendingPath:@"location"];
-    [location updateChildValues:@{@"latitude":[NSNumber numberWithDouble:coordinates.latitude]}];
-    [location updateChildValues:@{@"longitude":[NSNumber numberWithDouble:coordinates.longitude]}];
+    NSDictionary * loc = self.data[@"location"];
+    if( !loc ){
+        loc = [NSDictionary new];
+    }
     
+    NSMutableDictionary * location = [loc mutableCopy];
+    
+    location[@"latitude"]  = [NSNumber numberWithDouble:coordinates.latitude];
+    location[@"longitude"] = [NSNumber numberWithDouble:coordinates.longitude];
+    
+    self.data[@"location"] = location;
 }
 - (void) setLocationLocality:(NSString*)name withAdministrativeArea:(NSString*)area
 {
-    Firebase * location = [self.firebase childByAppendingPath:@"location"];
-    [location updateChildValues:@{@"locality":name, @"administrativeArea":area}];
+    NSDictionary * loc = self.data[@"location"];
+    if( !loc ){
+        loc = [NSDictionary new];
+    }
+    
+    NSMutableDictionary * location = [loc mutableCopy];
+    
+    location[@"locality"] = name;
+    location[@"administrativeArea"] = area;
+    
+    self.data[@"location"] = location;
+
 }
-- (void) setManaValue:(NSInteger)value
+- (void) setCost:(float) cost
 {
-    [self.firebase updateChildValues:@{@"mana":[NSNumber numberWithInt:value]}];
+    NSDictionary * ma = self.data[@"mana"];
+    if( !ma ){
+        ma = [NSDictionary new];
+    }
+    
+    NSMutableDictionary * mana = [ma mutableCopy];
+    mana[@"cost"] = [NSNumber numberWithFloat:cost];
+    
+    self.data[@"mana"] = mana;
+}
+- (void) setPrepTime:(float)hrs
+{
+    NSDictionary * ma = self.data[@"mana"];
+    if( !ma ){
+        ma = [NSDictionary new];
+    }
+    
+    NSMutableDictionary * mana = [ma mutableCopy];
+    mana[@"prepTime"] = [NSNumber numberWithFloat:hrs];
+    
+    self.data[@"mana"] = mana;
+}
+- (void) setTotalManaValue:(float)amount
+{
+    NSDictionary * ma = self.data[@"mana"];
+    if( !ma ){
+        ma = [NSDictionary new];
+    }
+    
+    NSMutableDictionary * mana = [ma mutableCopy];
+    mana[@"total"] = [NSNumber numberWithFloat:amount];
+    
+    self.data[@"mana"] = mana;
+}
+- (NSString*) description
+{
+    NSString * val = self.data[@"description"];
+    return val ? val : @"";
 }
 - (void) setDescription:(NSString*)description
 {
-    [self.firebase updateChildValues:@{@"description":description}];
+    self.data[@"description"] = description;
 }
 - (void) setAnytime:(BOOL) anytime
 {
-    Firebase * location = [self.firebase childByAppendingPath:@"when"];
-    [location updateChildValues:@{@"anytime":[NSNumber numberWithBool:anytime]}];
+    NSDictionary * wh = self.data[@"when"];
+    if( !wh ){
+        wh = [NSDictionary new];
+    }
+    
+    NSMutableDictionary * when = [wh mutableCopy];
+
+    when[@"anytime"] = [NSNumber numberWithBool:anytime];
+
+    self.data[@"when"] = when;
 }
 - (void) setStartDateTime:(NSDate*)date
 {
-    Firebase * location = [self.firebase childByAppendingPath:@"when"];
-    NSString * dateString = [date toISOString];
-    [location updateChildValues:@{@"starts":dateString}];
+    if( !date ) return;
+    
+    NSDictionary * wh = self.data[@"when"];
+    if( !wh ){
+        wh = [NSDictionary new];
+    }
+    
+    NSMutableDictionary * when = [wh mutableCopy];
+    
+    when[@"starts"] = [date toISOString];
+    
+    self.data[@"when"] = when;
 }
 
 - (void) setRSVPEndSeconds:(NSNumber*) secondsBefore
 {
-    Firebase * location = [self.firebase childByAppendingPath:@"guests"];
-    [location updateChildValues:@{@"rsvpSeconds":secondsBefore}];
+    NSDictionary * wh = self.data[@"guests"];
+    if( !wh ){
+        wh = [NSDictionary new];
+    }
+    
+    NSMutableDictionary * when = [wh mutableCopy];
+    
+    when[@"rsvpSeconds"] = secondsBefore;
+    
+    self.data[@"guests"] = when;
 }
 - (void) setDuration:(float) duration
 {
-    Firebase * location = [self.firebase childByAppendingPath:@"when"];
-    [location updateChildValues:@{@"duration":[NSNumber numberWithFloat:duration]}];
+    NSDictionary * wh = self.data[@"when"];
+    if( !wh ){
+        wh = [NSDictionary new];
+    }
+    
+    NSMutableDictionary * when = [wh mutableCopy];
+    
+    when[@"duration"] = [NSNumber numberWithFloat:duration];
+    
+    self.data[@"when"] = when;
 }
 - (void) setMinimumGuests:(int) guests
 {
-    Firebase * location = [self.firebase childByAppendingPath:@"guests"];
-    [location updateChildValues:@{@"min":[NSNumber numberWithInt:guests]}];
+    NSDictionary * wh = self.data[@"guests"];
+    if( !wh ){
+        wh = [NSDictionary new];
+    }
+    
+    NSMutableDictionary * when = [wh mutableCopy];
+    
+    when[@"min"] = [NSNumber numberWithInt:guests];
+    
+    self.data[@"guests"] = when;
 }
 - (void) setMaximumGuests:(int) guests
 {
-    Firebase * location = [self.firebase childByAppendingPath:@"guests"];
-    [location updateChildValues:@{@"max":[NSNumber numberWithInt:guests]}];
+    
+    NSDictionary * wh = self.data[@"guests"];
+    if( !wh ){
+        wh = [NSDictionary new];
+    }
+    
+    NSMutableDictionary * when = [wh mutableCopy];
+    
+    when[@"max"] = [NSNumber numberWithInt:guests];
+    
+    self.data[@"guests"] = when;
 }
-- (void) setCost:(float) cost
-{
-    Firebase * location = [self.firebase childByAppendingPath:@"mana"];
-    [location updateChildValues:@{@"cost":[NSNumber numberWithFloat:cost]}];
-}
-- (void) setPrepTime:(float)hrs
-{
-    Firebase * location = [self.firebase childByAppendingPath:@"mana"];
-    [location updateChildValues:@{@"prepTime":[NSNumber numberWithFloat:hrs]}];
-}
-- (void) setTotalManaValue:(float)amount
-{
-    Firebase * location = [self.firebase childByAppendingPath:@"mana"];
-    [location updateChildValues:@{@"total":[NSNumber numberWithFloat:amount]}];
-}
+
 @end

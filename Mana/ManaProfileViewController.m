@@ -9,6 +9,7 @@
 #import "ManaProfileViewController.h"
 #import "NSDate+ShortCuts.h"
 #import "REFrostedViewController.h"
+#import "StarRatingView.h"
 
 
 @interface ManaProfileViewController ()
@@ -16,6 +17,10 @@
 @property(nonatomic,weak) IBOutlet UIImageView * coverImageView;
 @property(nonatomic,weak) IBOutlet UILabel      * nameLabel;
 @property(nonatomic,weak) IBOutlet UILabel      * locationLabel;
+@property(nonatomic,weak) IBOutlet UILabel      * taglineLabel;
+@property(nonatomic,weak) IBOutlet UILabel      * manaBalanceLabel;
+@property(nonatomic,weak) IBOutlet StarRatingView * hostRatingView;
+@property(nonatomic,weak) IBOutlet StarRatingView * guestRatingView;
 @property(nonatomic) NSMutableArray * profilePhotoUrls;
 @property(nonatomic) NSMutableArray * facebookPhotos;
 @end
@@ -35,6 +40,18 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    
+    self.taglineLabel.text = @"";  // i have a value in the storyboard... hideit while loading
+    self.manaBalanceLabel.text = @"";
+    [User meWithCompletion:^(FDataSnapshot * snapshot) {
+        self.taglineLabel.text = [FirebaseSnapshot stringField:@"tagline" fromSnapshot:snapshot];
+        self.manaBalanceLabel.text = [[FirebaseSnapshot numberField:@"balance" childField:@"mana" fromSnapshot:snapshot] stringValue];
+        
+        self.guestRatingView.starRating = [FirebaseSnapshot numberField:@"guest" childField:@"ratings" fromSnapshot:snapshot];
+        self.hostRatingView.starRating = [FirebaseSnapshot numberField:@"host" childField:@"ratings" fromSnapshot:snapshot];
+    }];
+
     
     self.profilePhotoUrls = [NSMutableArray new];
     self.facebookPhotos   = [NSMutableArray new];
@@ -57,6 +74,7 @@
 
     NSInteger age = [NSDate ageFromFacebookBirthday:[ManaUserManager sharedInstance].facebookUser.birthday];
     self.nameLabel.text = [NSString stringWithFormat:@"%@, %d",[ManaUserManager sharedInstance].facebookUser.first_name, age];
+    
 }
 
 - (void) loadAdditionalPhotos:(NSDictionary*)albums{

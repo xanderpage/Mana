@@ -91,6 +91,7 @@
 - (void)viewPager:(SHViewPager *)viewPager willMoveToPageAtIndex:(NSInteger)toIndex fromIndex:(NSInteger)fromIndex
 {
     if( toIndex == 0 ){
+        [self removeButton];
         [self addButton];
     }
     else{
@@ -101,6 +102,8 @@
 
 - (void)viewPager:(SHViewPager *)viewPager didMoveToPageAtIndex:(NSInteger)toIndex fromIndex:(NSInteger)fromIndex
 {
+
+    
     NSLog(@"content moved to page %d from page: %d", toIndex, fromIndex);
 }
 

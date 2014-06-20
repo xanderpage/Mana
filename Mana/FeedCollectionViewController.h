@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "ExperienceList.h"
 
-@interface FeedCollectionViewController : UICollectionViewController<ExperienceListDelegate>
+@interface FeedCollectionViewController : UICollectionViewController<ExperienceListDelegate,UICollectionViewDelegate>
 
 @end

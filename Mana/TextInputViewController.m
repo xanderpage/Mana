@@ -35,35 +35,32 @@
     [super viewWillAppear:animated];
     
     
-    Firebase * fb = [ManaExperienceCreator sharedInstance].experience.firebase;
-    [fb observeEventType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
-        [ManaExperienceCreator sharedInstance].experience.snapshot = snapshot;
-        [self.textView becomeFirstResponder];
+    [self.textView becomeFirstResponder];
+    
+    if( [self.field isEqualToString:@"Address"] ){
+        self.titleLabel.text = @"Address & Directions";
+        self.characterLimit = [NSNumber numberWithInt:100];
+        self.textView.text = [ManaExperienceCreator sharedInstance].experience.address;
+    }
+    
+    if( [self.field isEqualToString:@"Description"] ){
+        self.titleLabel.text = @"Describe Your Experience";
+        self.characterLimit = [NSNumber numberWithInt:100];
+        self.textView.text = [ManaExperienceCreator sharedInstance].experience.description;
         
-        if( [self.field isEqualToString:@"Address"] ){
-            self.titleLabel.text = @"Address & Directions";
-            self.characterLimit = [NSNumber numberWithInt:100];
-            self.textView.text = snapshot.value[@"address"];
-        }
+    }
+    
+    if( [self.field isEqualToString:@"Title"] ){
+        self.titleLabel.text = @"Title For Your Experience";
+        self.characterLimit = [NSNumber numberWithInt:100];
+        self.textView.text = [ManaExperienceCreator sharedInstance].experience.title;
         
-        if( [self.field isEqualToString:@"Description"] ){
-            self.titleLabel.text = @"Describe Your Experience";
-            self.characterLimit = [NSNumber numberWithInt:100];
-            self.textView.text = snapshot.value[@"description"];
-            
-        }
-        
-        if( [self.field isEqualToString:@"Title"] ){
-            self.titleLabel.text = @"Title For Your Experience";
-            self.characterLimit = [NSNumber numberWithInt:100];
-            self.textView.text = snapshot.value[@"title"];
-            
-        }
-        
-        int rem = self.characterLimit.intValue - self.textView.text.length;
-        
-        self.charactersRemainingLabel.text = [NSString stringWithFormat:@"%d characters remaining", rem];
-    }];
+    }
+    
+    int rem = self.characterLimit.intValue - self.textView.text.length;
+    
+    self.charactersRemainingLabel.text = [NSString stringWithFormat:@"%d characters remaining", rem];
+
 }
 - (IBAction)helpButtonTapped:(id)sender{
     NSLog(@"Tappity tap");

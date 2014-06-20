@@ -9,16 +9,26 @@
 #import <Foundation/Foundation.h>
 
 @interface Experience : NSObject
+@property (nonatomic,strong) NSMutableDictionary * data;
+- (id) init;
++ (void) createWithDictionary:(NSDictionary*)data;
 
-+ (Experience*) create;
+
+- (NSString*) title;
 - (void) setTitle:(NSString*)title;
+
 - (void) setLocation:(CLLocationCoordinate2D)coordinates withName:(NSString*)string;
 - (void) setLocationLocality:(NSString*)name withAdministrativeArea:(NSString*)area;
 - (void) setLocation:(CLLocationCoordinate2D)coordinates;
 - (void) setAnytime:(BOOL) anytime;
 - (void) setManaValue:(NSInteger)value;
+
+- (NSString*) description;
 - (void) setDescription:(NSString*)description;
+
+- (NSString*) address;
 - (void) setAddress:(NSString*)address;
+
 - (void) setCreator;
 - (void) addImage:(UIImage*)image;
 - (void) setCategory:(NSString*)cat;
@@ -32,6 +42,4 @@
 - (void) setTotalManaValue:(float)amount;
 - (void) setPublished:(BOOL) published;
 
-@property (nonatomic,strong) Firebase * firebase;
-@property (nonatomic,strong) FDataSnapshot *snapshot;
 @end

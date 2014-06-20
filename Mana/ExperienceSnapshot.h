@@ -13,4 +13,11 @@
 
 - (NSString*)title;
 - (NSString*)category;
+- (NSString*)description;
+- (UIImage*)image;
+- (NSString*) location;
+- (NSString*) manaCost;
+- (NSString*) creator;
+- (NSDate*) startDateTime;
+- (BOOL) isAnytime;
 @end

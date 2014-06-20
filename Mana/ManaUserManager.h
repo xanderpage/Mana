@@ -13,6 +13,7 @@
 @property(nonatomic) id<FBGraphUser> facebookUser;
 
 
+
 - (void) logout;
 - (NSArray*) facebookReadPermissions;
 @end

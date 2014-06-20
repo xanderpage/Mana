@@ -23,7 +23,9 @@
     #import "UIImageView+WebCache.h"
 
     #import "Experience.h"  // for writing
+    #import "User.h"
     #import "ExperienceSnapshot.h" // for reading
+    #import "FirebaseSnapshot.h"    // utils for getting useful data from snapshots
 
     #import "ManaUserManager.h" // user account singleton
     #import "ManaExperienceCreator.h"

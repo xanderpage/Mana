@@ -9,9 +9,10 @@
 #import "HostDetailsTableViewController.h"
 #import "UITableViewController+NextButtonSegue.h"
 #import "TextInputViewController.h"
+#import "UIImage+Resize.h"
 
 @interface HostDetailsTableViewController ()
-
+@property(nonatomic,weak) IBOutlet UIImageView * imageView;
 @end
 
 @implementation HostDetailsTableViewController
@@ -37,7 +38,7 @@
 }
 - (void) nextButtonTapped:(id)sender{
     
-    [[ManaExperienceCreator sharedInstance].experience setPublished:YES];
+    [[ManaExperienceCreator sharedInstance] endCreatingExperience:YES];
     [self performSegueWithIdentifier:@"Confirm" sender:nil];
 }
 - (void) viewDidDisappear:(BOOL)animated{
@@ -59,11 +60,22 @@
     [self presentViewController:picker animated:NO completion:nil];
 }
 - (void) imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info{
+    UIImage *img = info[UIImagePickerControllerOriginalImage];
     
-    UIImage *img = info[UIImagePickerControllerEditedImage];
+    CGFloat aspect = img.size.height/img.size.width;
+    CGFloat w = self.imageView.bounds.size.width*2.5;
     
-    [[ManaExperienceCreator sharedInstance].experience addImage:img];
-    
+    if( w > img.size.width ){
+        self.imageView.image = img;
+        [[ManaExperienceCreator sharedInstance].experience addImage:img];
+    }
+    else
+    {
+        CGSize size = CGSizeMake(w, w*aspect);
+        UIImage * resized =[img resizedImage:size interpolationQuality:kCGInterpolationHigh];
+        self.imageView.image = resized;
+        [[ManaExperienceCreator sharedInstance].experience addImage:resized];
+    }
     [picker dismissViewControllerAnimated:YES completion:nil];
 }
 - (void) imagePickerControllerDidCancel:(UIImagePickerController *)picker{

@@ -21,11 +21,16 @@
 
 - (void) beginCreatingExperience
 {
-    self.experience = [Experience create];
+    self.experience = [Experience new];
 }
 
 - (void) endCreatingExperience:(BOOL)commit
 {
-    
+    if( commit ){
+        [Experience createWithDictionary:self.experience.data];
+    }
+    else{
+        NSLog(@"Cancelled? Why do that.");
+    }
 }
 @end

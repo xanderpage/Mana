@@ -7,6 +7,7 @@
 //
 
 #import "FeedCollectionViewController.h"
+#import "UIViewController+RSVPButton.h"
 
 @interface FeedCollectionViewController ()
 @property(nonatomic,strong) ExperienceList * dataSource;
@@ -28,7 +29,20 @@
     [super viewDidLoad];
     self.dataSource = [[ExperienceList alloc] initWithDelegate:self];
     self.collectionView.dataSource = self.dataSource;
+    self.collectionView.contentInset = UIEdgeInsetsZero;
+    
     // Do any additional setup after loading the view.
+}
+
+- (void) viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    
+    [self addButton];
+}
+- (void) viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    
+    [self removeButton];
 }
 
 - (void)didReceiveMemoryWarning
@@ -41,15 +55,9 @@
     [self.collectionView reloadData];
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
+    return CGSizeMake(self.view.frame.size.width, self.view.frame.size.height);
 }
-*/
+
 
 @end

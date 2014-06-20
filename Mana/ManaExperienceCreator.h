@@ -11,6 +11,7 @@
 @interface ManaExperienceCreator : NSObject
 + (ManaExperienceCreator*)sharedInstance;
 - (void) beginCreatingExperience;
+- (void) endCreatingExperience:(BOOL)commit;
 
 @property(nonatomic) Experience * experience;
 @end

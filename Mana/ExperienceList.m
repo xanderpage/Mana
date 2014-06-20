@@ -20,10 +20,19 @@
     self = [super init];
     self.delegate = del;
     if( self ){
-        Firebase * fb = [[Firebase alloc] initWithUrl:@"https://glowing-fire-7751.firebaseio.com/experiences"];
+        Firebase * fb = [[Firebase alloc] initWithUrl:@"https://mana.firebaseio.com/experiences"];
         [fb observeEventType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
-            self.snapshot = snapshot.value;
-            self.keys = self.snapshot.allKeys;
+            if( snapshot.value ){
+                self.snapshot = snapshot.value;
+                
+                if( [self.snapshot respondsToSelector:@selector(allKeys)] )
+                {
+                    self.keys = self.snapshot.allKeys;
+                }
+                else{
+                    self.keys = [NSArray new];
+                }
+            }
             [self.delegate experienceListDidFinishLoading:self];
         }];
     }

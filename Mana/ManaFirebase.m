@@ -21,7 +21,7 @@
 }
 
 - (void) setup{
-    self.baseURLString = @"https://glowing-fire-7751.firebaseio.com/";
+    self.baseURLString = @"https://mana.firebaseio.com/";
 }
 @end
 
